@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Developer's guide</title>
+    <script type="text/javascript" src="js/sh_main.min.js" language="JavaScript"></script>
+    <script type="text/javascript" src="js/lang/sh_java.min.js" language="JavaScript"></script>
+    <script type="text/javascript" src="js/lang/sh_xml.min.js" language="JavaScript"></script>
+    <script type="text/javascript" src="js/lang/sh_properties.min.js" language="JavaScript"></script>
+    <link href="css/sh_whitengrey.min.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+
+<body onload="sh_highlightDocument();">
+<div>
+    Passage puts you product and/or it's features under license protection.
+    To make it do so you should take several steps.
+</div>
+<h1>Step 1: Tell Passage, what it must protect: declare licensing requirements</h1>
+<div>
+    <ul>
+        <li>
+            Highlight <span class="term">features</span> in your product that you want to be used under licensing
+            protection.
+            <p class="note">
+                If the product itself must be protected - this is the first <span class="term">feature</span> named
+                after the
+                product. If there are other functionality, like, say, especially clever graphical editor or <span
+                    class="sample">contact
+                support team</span> function, these are features too.</p>
+        </li>
+        <li> Specify a feature for Passage.
+            <ul>
+                <li><span class="term">Name</span> each feature in a product-wide unique way.</li>
+                <li>A feature, most probably, is going to evolve, so pinpoint a particular <span
+                        class="term">version</span> for each
+                    feature.
+                </li>
+                <li>Decide, how badly you want this feature to be protected by license.
+                    <p>We call it <span class="term">restriction level</span>. It describes class of actions to be taken
+                        in case
+                        there is no proper license for the feature. Currently four of them are supported:
+                    </p>
+                    <ul>
+                        <li><span class="term">error</span>: lack of license coverage prevents feature from running: no
+                            one must use
+                            you feature without proper license
+                        </li>
+                        <li><span class="term">fatal</span>: the whole product is to be stopped, if this particular
+                            feature is not
+                            covered by a license
+                        </li>
+                        <li><span class="term">warn</span>: feature execution is to be paused and a user is forced to
+                            take an action
+                            to proceed (see an ad, press any key, etc.)
+                        </li>
+                        <li><span class="term">info</span>: light, not blocking informative action is to be taken, like
+                            log entry
+                            <span class="sample">the feature is not licensed</span>.
+                        </li>
+                    </ul>
+                    <p class="note">Almost each of these actions are to be implemented on the product side. </p>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Demand licensing: declare licensing requirements using <span class="term">Provide-Capability</span> header
+            in a bundle's
+            <span class="term">MANIFEST.MF</span>:
+            <pre class="sh_properties">
+ Provide-Capability: licensing.feature;licensing.feature="my.company.product.support";version="1.4.8";name="Contact Support Team";level="error";provider="The Company"
+            </pre>
+            Here is an example taken from <a
+                href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.api/META-INF/MANIFEST.MF">Passage
+            Operator</a> licensing declaration:
+            <pre class="sh_properties">
+ Provide-Capability: licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.personal";version="2.0.0";name="Issue Personal License";level="warn";provider="Eclipse Passage",
+   licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating";version="2.0.0";name="Issue Floating License";level="warn";provider="Eclipse Passage",
+   licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.personal.full";version="2.0.0";name="Issue full functioning Personal License";level="error";provider="Eclipse Passage",
+   licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating.full";version="2.0.0";name="Issue full functioning Floating License";level="error";provider="Eclipse Passage"
+            </pre>
+            <p class="note"> Passage does not make any difference between your bundles, your licensing requirements will
+                be located
+                anyway. But it's a good practice to declare licensing requirements as a part of functionality contract,
+                in a
+                sort of <span>API</span> bundle for the corresponding functionality.
+            </p>
+        </li>
+    </ul>
+    <p>Now Passage knows exactly what parts of your product is to be protected and which licenses are proper.</p>
+</div>
+<h1>Step 2: Tell Passage, which services it has: configure Access Cycle</h1>
+<div>
+    <p><span class="term">Access Cycle</span> is an invisible part of Passage that facilitates license checks on you
+        product's runtime. </p>
+    <p>It is highly configurable, though the configuration is quite simple:
+        your product's codebase just need to supply an instance of <a
+                href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/Framework.java">Framework</a>
+        interface
+        available through OSGi-component implementing <a
+                href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/FrameworkSupplier.java">FrameworkSupplier</a>
+        interface </p>
+    <p class="note">
+        We have <a
+            href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.seal.demo/src/org/eclipse/passage/seal/internal/demo/DemoFramework.java">Demo
+        Framework</a>,
+        which is configured with all the services implementations we have out of the box.
+        You can also consult with the <a
+            href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator.seal/src/org/eclipse/passage/loc/operator/seal/OperatorFramework.java">Operator
+        Framework</a>, which configures Access Cycle for our
+        <a href="https://download.eclipse.org/passage/downloads/release/1.2.1/operator/">Passage Operator</a> product.
+    </p>
+    <p>There must be exactly one <span class="term">Framework</span> supplied on runtime, other configurations are
+        treated by Passage as sabotage.</p>
+</div>
+<h1>Step 3: implement license checks</h1>
+<div>
+    <p>Now in all key places in the product's codebase you should check if there is sufficient license coverage and take
+        proper actions it there isn't.</p>
+    <p>All you need to communicate with <span class="term">Passage Access Cycle</span> - identifiers of all your
+        <span class="term">features under licensing protection</span>.
+    </p>
+    <p>Passage supplies the following API</p>
+    <ul>
+        <li>
+            <p>To check license on the product's start, having you've declared a licensing requirement for feature named
+                after the product, use <a
+                        href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.e4.ui/src/org/eclipse/passage/lic/internal/e4/ui/addons/E4LicensingAddon.java">Passage
+                    Licensing Addon</a>,
+                which can be activated with the use of extension:</p>
+            <pre class="sh_xml">
+                &lt;extension
+                        id="licensing"
+                        point="org.eclipse.e4.workbench.model"&gt;
+                  &lt;processor
+                          apply="always"
+                          beforefragment="false"
+                          class="org.eclipse.passage.lic.internal.e4.ui.addons.E4LicensingProcessor"&gt;
+                  &lt;/processor&gt;
+               &lt;/extension&gt;
+            </pre>
+            <p>In case of insufficient license it'll expose standard Passage <span
+                    class="term">Licensing status dialog</span> like it does for Passage Operator:
+                <img src="i/passage-ui-product-startup.PNG" width="400px"/></p>
+        </li>
+        <li>
+            <p> There are two main interfaces, which facilitate license checks for client code:
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/Passage.java">Passage</a>
+                and
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/PassageUI.java">Passage
+                    UI</a> interfaces
+                with <span class="term">Equinox</span>-based implementations
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.equinox/src/org/eclipse/passage/lic/internal/equinox/EquinoxPassage.java">Equinox
+                    Passage</a>
+                and <a
+                        href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/EquinoxPassageUI.java">Equinox
+                    Passage UI</a>.
+            </p>
+            <p>
+                Each feature, been used, must <span class="term">acquire a license grant</span> and then <span
+                    class="term">release</span> it after the work id done. <span class="term">Passage*</span>-interfaces
+                have proper methods for this,
+                but the work in general is pretty common, so there are several handy classes:</p>
+            <ul>
+                <li>
+                    <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.equinox/src/org/eclipse/passage/lic/internal/equinox/LicensedRunnable.java">Licensed
+                        Runnable</a>
+                    - use it's <span class="term">Default</span> implementation or extend to cover usage of a headless
+                    feature under licensing protection.
+                </li>
+                <li>
+                    <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/actions/LicensedRunnableUi.java">License
+                        Runnable UI</a>
+                    or <a
+                        href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/actions/LicensedAction.java">Licensed
+                    Action</a>
+                    - for the same purpose, but for features that can afford GUI invocation.
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
