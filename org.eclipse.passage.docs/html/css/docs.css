@@ -26,5 +26,27 @@ a, a:visited {
 
 a:hover {
     background: lightgray;
-    transition: 2,7s;
+}
+
+img.built-in {
+    display: block;
+}
+
+table.tasks {
+    border-spacing: 10px;
+    border-collapse: separate;
+}
+
+table.tasks td {
+    padding: 10px;
+}
+
+table.tasks td.task {
+    vertical-align: top;
+    font-size: 120%;
+    width: 30%;
+}
+
+table.tasks td.solution {
+    font-size: 80%;
 }
