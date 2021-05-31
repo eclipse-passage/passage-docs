@@ -25,7 +25,7 @@
             protection.
             <p class="note">
                 If the product itself must be protected - this is the first feature named
-                after the product. If there are other functionality, like, say, especially clever graphical editor or
+                after the product.<br/>If there are other functionality, like, say, especially clever graphical editor or
                 <span class="sample">contact support team</span> function, these are features too.
             </p>
         </li>
@@ -80,7 +80,7 @@
    licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating.full";version="2.0.0";name="Issue full functioning Floating License";level="error";provider="Eclipse Passage"
             </pre>
             <p class="note"> Passage does not make any difference between your bundles, your licensing requirements will
-                be located anyway. But it's a good practice to declare licensing requirements as a part of functionality
+                be located anyway.<br/>But it's a good practice to declare licensing requirements as a part of functionality
                 contract, in a sort of <span class="sample">API</span> bundle for the corresponding functionality.
             </p>
         </li>
@@ -174,7 +174,7 @@
             </li>
             <li>
                 <a target="_blank"
-                   href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/actions/LicensedRunnableUi.java">License
+                   href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/actions/LicensedRunnableUI.java">License
                     Runnable UI</a>
                 or <a target="_blank"
                       href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/actions/LicensedAction.java">Licensed
@@ -183,17 +183,62 @@
             </li>
         </ul>
     </div>
-    <p>Let's solve a pair of practical tasks</p>
+    <p>Now let's solve several practical tasks.</p>
+    <div class="note">
+        <p>Upcoming Passage Operator 2.0.0 itself is a product licensed by Passage. <br/>Consult its source
+            code: </p>
+        <ul>
+            <li>
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator/META-INF/MANIFEST.MF">
+                    MANIFEST.MF of LOC branding plug-in
+                </a> declares licensing requirement for the main product feature.<br/>Feature identifier equals to the
+                Operator
+                product name
+                <a href="https://github.com/eclipse-passage/passage/blob/master/products/org.eclipse.passage.loc.operator.product/org.eclipse.passage.loc.operator.product.product">
+                    declared
+                </a> in the corresponding LOC product bundle.
+            </li>
+            <li>
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator/plugin.xml">
+                    Extension for <span class="term">org.eclipse.e4.workbench.model</span> point
+                </a> enables license check on the product startup.
+            </li>
+            <li>
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.api/META-INF/MANIFEST.MF">
+                    LOC API MANIFEST.MF
+                </a> declares licensing requirement for 4 internal features.
+            </li>
+            <li>
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.dashboard.ui/src/org/eclipse/passage/loc/dashboard/ui/handlers/DashboardIssueLicenseHandler.java">
+                    An action handler
+                </a> appeals to Passage for one of the protected internal features invocation.<br/>
+                License coverage for another protected internal feature is checked inside the
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.licenses.core/src/org/eclipse/passage/loc/internal/licenses/core/issue/PersonalLicenseIssuingProtection.java">implementation
+                    code</a>.
+            </li>
+            <li>
+                <a href="https://github.com/eclipse-passage/passage/tree/master/bundles/org.eclipse.passage.loc.operator.seal">
+                    Operator Seal</a> bundle
+                <a class="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator.seal/src/org/eclipse/passage/loc/operator/seal/OperatorAccessCycleConfiguration.java">configures
+                    Access Cycle</a>
+                and
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator.seal/src/org/eclipse/passage/loc/operator/seal/OperatorFrameworkSupplier.java">supplies</a>
+                an instance of
+                <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator.seal/src/org/eclipse/passage/loc/operator/seal/OperatorFramework.java">Passage
+                    Framework</a>.
+            </li>
+        </ul>
+    </div>
     <table class="tasks">
         <tr>
             <td class="task">
                 <p>check license of the product's start</p>
             </td>
             <td class="solution">
-               <p>Having you've declared a licensing requirement for feature named after the product, use
-                <a target="_blank"
-                   href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.e4.ui/src/org/eclipse/passage/lic/internal/e4/ui/addons/E4LicensingAddon.java">Passage
-                    Licensing Addon</a>. It can be activated with the use of extension:</p>
+                <p>Having you've declared a licensing requirement for feature named after the product, use
+                    <a target="_blank"
+                       href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.e4.ui/src/org/eclipse/passage/lic/internal/e4/ui/addons/E4LicensingAddon.java">Passage
+                        Licensing Addon</a>. It can be activated with the use of extension:</p>
                 <pre class="sh_xml">
         &lt;extension
                 id="licensing"
