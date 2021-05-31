@@ -18,6 +18,10 @@ span.sample {
     color: darkgrey;
 }
 
+.emphasis {
+    font-style: italic;
+}
+
 a, a:visited {
     color: darkgreen;
     text-decoration: none;
@@ -33,11 +37,16 @@ img.built-in {
 }
 
 table.tasks {
-    border-spacing: 10px;
+    border-spacing: 0px;
     border-collapse: separate;
 }
 
+table.tasks tr {
+    border-top: 1px dashed gray;
+}
+
 table.tasks td {
+    border-top: 1px dashed lightgray;
     padding: 10px;
 }
 
@@ -45,6 +54,7 @@ table.tasks td.task {
     vertical-align: top;
     font-size: 120%;
     width: 30%;
+    border-right: 1px dashed lightgray;
 }
 
 table.tasks td.solution {

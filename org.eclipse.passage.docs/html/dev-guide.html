@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Developer's guide</title>
+    <title>Passage Developer's guide</title>
     <script type="text/javascript" src="js/sh_main.min.js" language="JavaScript"></script>
     <script type="text/javascript" src="js/lang/sh_java.min.js" language="JavaScript"></script>
     <script type="text/javascript" src="js/lang/sh_xml.min.js" language="JavaScript"></script>
@@ -25,7 +25,8 @@
             protection.
             <p class="note">
                 If the product itself must be protected - this is the first feature named
-                after the product.<br/>If there are other functionality, like, say, especially clever graphical editor or
+                after the product.<br/>If there are other functionality, like, say, especially clever graphical editor
+                or
                 <span class="sample">contact support team</span> function, these are features too.
             </p>
         </li>
@@ -68,19 +69,20 @@
             in a bundle's
             <span class="term">MANIFEST.MF</span>:
             <pre class="sh_properties">
- Provide-Capability: licensing.feature;licensing.feature="my.company.product.support";version="1.4.8";name="Contact Support Team";level="error";provider="The Company"
+    Provide-Capability: licensing.feature;licensing.feature="my.company.product.support";version="1.4.8";name="Contact Support Team";level="error";provider="The Company"
             </pre>
             Here is an example taken from <a target="_blank"
                                              href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.api/META-INF/MANIFEST.MF">Passage
             Operator</a> licensing declaration:
             <pre class="sh_properties">
- Provide-Capability: licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.personal";version="2.0.0";name="Issue Personal License";level="warn";provider="Eclipse Passage",
-   licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating";version="2.0.0";name="Issue Floating License";level="warn";provider="Eclipse Passage",
-   licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.personal.full";version="2.0.0";name="Issue full functioning Personal License";level="error";provider="Eclipse Passage",
-   licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating.full";version="2.0.0";name="Issue full functioning Floating License";level="error";provider="Eclipse Passage"
-            </pre>
+    Provide-Capability: licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.personal";version="2.0.0";name="Issue Personal License";level="warn";provider="Eclipse Passage",
+       licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating";version="2.0.0";name="Issue Floating License";level="warn";provider="Eclipse Passage",
+       licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.personal.full";version="2.0.0";name="Issue full functioning Personal License";level="error";provider="Eclipse Passage",
+       licensing.feature;licensing.feature="org.eclipse.passage.loc.operator.issue.floating.full";version="2.0.0";name="Issue full functioning Floating License";level="error";provider="Eclipse Passage"
+                </pre>
             <p class="note"> Passage does not make any difference between your bundles, your licensing requirements will
-                be located anyway.<br/>But it's a good practice to declare licensing requirements as a part of functionality
+                be located anyway.<br/>But it's a good practice to declare licensing requirements as a part of
+                functionality
                 contract, in a sort of <span class="sample">API</span> bundle for the corresponding functionality.
             </p>
         </li>
@@ -97,7 +99,7 @@
         interface
         available through OSGi-component implementing <a target="_blank"
                                                          href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/FrameworkSupplier.java">FrameworkSupplier</a>
-        interface </p>
+        interface.</p>
     <p class="note">
         We have <a target="_blank"
                    href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.seal.demo/src/org/eclipse/passage/seal/internal/demo/DemoFramework.java">Demo
@@ -129,8 +131,7 @@
         and
         <a target="_blank"
            href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/PassageUI.java">Passage
-            UI</a> interfaces
-        with <span class="term">Equinox</span>-based implementations
+            UI</a> with <span class="term">Equinox</span>-based implementations
         <a target="_blank"
            href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.equinox/src/org/eclipse/passage/lic/internal/equinox/EquinoxPassage.java">Equinox
             Passage</a>
@@ -144,22 +145,22 @@
             of appeals to Passage Access Cycle. Generally it looks like this:
         </p>
         <pre class="sh_java">
-            String feature = "my.feature.identifier";
-            ...
-            public void protectedFunctionalityIsRequested(){
-                ServiceInvocationResult&lt;GrantLockAttempt&gt; grant = new EquinoxPassage().acquireLicense(feature);
-                if(grantIsNotAcquired(grant)) {
-                    handleFailure(grant.diagnostic());
-                    return;
-                }
-                keepGrant(grant.data());
-                invokeProtectedFunctionality();
+        String feature = "my.feature.identifier";
+        ...
+        public void protectedFunctionalityIsRequested(){
+            ServiceInvocationResult&lt;GrantLockAttempt&gt; grant = new EquinoxPassage().acquireLicense(feature);
+            if(grantIsNotAcquired(grant)) {
+                handleFailure(grant.diagnostic());
+                return;
             }
+            keepGrant(grant.data());
+            invokeProtectedFunctionality();
+        }
 
-            ...
-            void protectedFunctionalityCompletedOrFailed() {
-                grant.ifPresent(new EquinoxPassage()::releaseLicense);
-            }
+        ...
+        void protectedFunctionalityCompletedOrFailed() {
+            grant.ifPresent(new EquinoxPassage()::releaseLicense);
+        }
         </pre>
         <p>
             To avoid boilerplating this template among client's code, Passage supplies couple of handy units:
@@ -183,7 +184,7 @@
             </li>
         </ul>
     </div>
-    <p>Now let's solve several practical tasks.</p>
+    <h3>Now let's solve several practical tasks.</h3>
     <div class="note">
         <p>Upcoming Passage Operator 2.0.0 itself is a product licensed by Passage. <br/>Consult its source
             code: </p>
@@ -232,7 +233,7 @@
     <table class="tasks">
         <tr>
             <td class="task">
-                <p>check license of the product's start</p>
+                <p>check license on start of a product built on top of Eclipse Workbench</p>
             </td>
             <td class="solution">
                 <p>Having you've declared a licensing requirement for feature named after the product, use
@@ -266,6 +267,7 @@
                 </p>
                 <pre class="sh_java">
         public final class ProtectedAction extends org.eclipse.jface.action.Action {
+
             private final String feature = "my.protected.feature.identifier";
             ...
             @Override
@@ -273,16 +275,46 @@
                 return new EquinoxPassage().canUse(feature);
             }
             ...
+
         }
                 </pre>
             </td>
         </tr>
         <tr>
             <td class="task">
-                <p>protect headless action</p>
+                <p>protect headless implementation of a <span class="term">feature</span></p>
             </td>
             <td class="solution">
+                <p>
+                    Use <span class="term">LicensedRunnable</span> to let us do all the license checks.<br/>
+                    Just configure it's <span class="term">Default</span> with</p>
+                <ul>
+                    <li>the feature identifier,</li>
+                    <li><span class="term">Runnable</span> that implements a business-function of the feature,</li>
+                    <li>handle for all not-successful responses.</li>
+                </ul>
+                <pre class="sh_java">
+        public final class Invoke {
 
+            private final String feature = "a.feature.under.license.protection";
+            private final Logger log = LogManager.getLogger(getClass());
+
+            public void userCallsProtectedFunctionality() {
+                new LicensedRunnable.Default(feature, this::doTheWork, this::handleError);
+            }
+
+            private void doTheWork() {
+                // protected functionality here
+            }
+
+            private void handleError(ServiceInvocationResult&lt;GrantLockAttempt&gt; response) {
+                log.error(new DiagnosticExplained(response.diagnostic()));
+            }
+
+        }
+                </pre>
+                <p><span class="term">Access Cycle</span> is asked ones, and if access to the feature is granted,
+                    then the protected business-code is called, otherwise failure handle is invoked.</p>
             </td>
         </tr>
         <tr>
@@ -290,15 +322,48 @@
                 <p>protect action with GUI available</p>
             </td>
             <td class="solution">
-
+                <p> Use <span class="term">LicensedRunnableUI</span> extension of <span
+                        class="term">LicensedRunnable</span>.</p>
+                <pre>
+        new LicensedRunnableUI(this::shell, feature, this::openWizard).run();
+                </pre>
+                <p>It gains either default <span class="term">Shell</span> or the one from your particular gui context,
+                    and uses it <span class="emphasis">to interact with the product's user</span>.</p>
+                <p>If the feature is covered by a license properly, no interaction GUI elements are exposed.</p>
+                <p>If license coverage is not sufficient, then <span class="term">Licensing status dialog</span>
+                    opens. It offers the user an opportunity to <span class="emphasis">alter</span> license coverage
+                    (import proper license) and rechecks it each time when the user does so.
+                </p>
+                <p>Finally, either Passage is satisfied (the last of imported licenses worked) and your protected code
+                    is allowed to run, or, if license coverage has not been improved, configured denial handing code is
+                    invoked.
+                </p>
             </td>
         </tr>
         <tr>
             <td class="task">
-                <p>handle <span class="sample">not covered by a license</span> case</p>
+                <p>handle <span class="sample">feature cannot be executed as it is not covered by a license</span> case
+                </p>
             </td>
             <td class="solution">
-
+                <p>Most appeals to <span class="term">Passage</span> return an instance of
+                    <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/ServiceInvocationResult.java">
+                        Service Invocation Result</a>. It offers rich
+                    <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.api/src/org/eclipse/passage/lic/internal/api/diagnostic/Diagnostic.java">Diagnostic</a>.
+                </p>
+                <p>
+                    You can expose it widely to the user with
+                    <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jface/src/org/eclipse/passage/lic/internal/jface/dialogs/licensing/DiagnosticDialog.java">
+                        Diagnostic Dialog </a>, if you can afford GUI, or log in some way using
+                    <a href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.base/src/org/eclipse/passage/lic/internal/base/diagnostic/DiagnosticExplained.java">
+                        Diagnostic Explained
+                    </a> string supplier.
+                </p>
+                <p>These facilities gives the user enough information to find out the reason of denial.<br/>
+                    There are also sufficient data to trace the logic and intermediate decisions.<br/>
+                    If, for some particular case, the diagnostic is not enough, please
+                    <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Passage">file an issue</a> for us to
+                    extend it. </p>
             </td>
         </tr>
 
