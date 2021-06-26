@@ -1,0 +1,116 @@
+% Copyright (c) 2021 ArSysOp and others
+%
+% This program and the accompanying materials are made available under the
+% terms of the Eclipse Public License 2.0 which is available at
+% https://www.eclipse.org/legal/epl-2.0/.
+%
+% SPDX-License-Identifier: EPL-2.0
+%
+% Contributors:
+%     Nikifor Fedorov (ArSysOp)
+
+\documentclass[12pt]{report}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+linkcolor=black,
+urlcolor=black}
+
+\title{Eclipse Passage User Guide}
+\author{ArSysOp Limited}
+\date{26 June 2021}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+
+        \Huge
+        \textbf{Eclipse Passage User Guide}
+
+        
+        \vfill
+        
+        \includegraphics[width=4cm]{passage}
+        
+        \vfill
+
+        \Large
+        ArSysOp Limited, 2021
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Introduction}
+
+\addcontentsline{toc}{section}{Overview}
+\section*{Overview}
+
+\textbf{Eclipse Passage} is a set of tools providing rich and easily adaptable capabilities to declare and control licensing constraints.
+Being an open-source project under Eclipse Foundation, it is entirely developed with Java 11 by the \textit{Arsysop Limited} company.
+
+This user guide contains a glossary, which gives you base understanding of terms used in Eclipse Passage and two sets of instructions: for developer, who
+wants to license some features or entire application with Passage, and for operator, who wants to manage licenses and metadata with the Eclipse Passage Operator.
+
+Happy Reading!
+
+\addcontentsline{toc}{section}{Contribution}
+\section*{Contribution}
+
+If you found a mistake in the text or just want to improve this user guide, feel free to contribute on \href{https://github.com/eclipse-passage/passage-docs}{Github} repository.
+
+\addcontentsline{toc}{section}{License}
+\section*{License}
+
+These materials are made available under the terms of the \href{https://www.eclipse.org/legal/epl-2.0/}{Eclipse Public License 2.0}.
+
+\addcontentsline{toc}{chapter}{Components}
+\chapter*{Components}
+
+\addcontentsline{toc}{section}{Licensing Components}
+\section*{Licensing Components}
+
+Licensing Components is a set of tools you have to include in your application to be able to declare any licensing logic (For example, what to do if a correct license was not acquired by the licensing framework).
+It allows you to restrict unauthorized using of a single feature, bundle or even the whole application.
+
+\addcontentsline{toc}{section}{Operator}
+\section*{Operator}
+
+Operator client - is a separate application that gives you a manual control under all the licenses your product can have (both personal and floating). Also, it is required
+in access cycle in order to define the product or/and features metadata and to generate keypair for license file encoding.
+
+\addcontentsline{toc}{section}{Floating License Server}
+\section*{Floating License Server}
+
+Eclipse Passage FLS is a component implementing the Floating License Server concept. Works roughly in a way described below.
+
+The licensee acquires (in any way) a finite number of licenses and these licenses are stored on the License Server. When an authorized user wants to use the application,
+they request a license from the server, and if the license pool is not empty (in other words, there are still licenses available), the server gives user an access to the
+application. When user finishes his work with the application, the license is released and can be obtained by the other authorized user.
+
+\addcontentsline{toc}{chapter}{Developer's guide}
+\chapter*{Developer's guide}
+
+This section is under construction for now.
+
+\addcontentsline{toc}{chapter}{Eclipse Operator User Guide}
+\chapter*{Eclipse Operator User Guide}
+
+This section is under construction for now.
+
+\addcontentsline{toc}{chapter}{Common Problems}
+\chapter*{Common Problems}
+
+This section is under construction for now.
+
+\addcontentsline{toc}{chapter}{Glossary}
+\chapter*{Glossary}
+
+This section is under construction for now.
+
+\end{document}
