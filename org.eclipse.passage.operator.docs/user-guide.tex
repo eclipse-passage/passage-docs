@@ -11,15 +11,42 @@
 
 \documentclass[12pt]{report}
 
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
 \usepackage{graphicx}
 \graphicspath{{./images/}}
+
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,
 linkcolor=black,
-urlcolor=black}
+urlcolor=gray}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[width=13pt]{glyph}}
+\rhead{\leftmark}
+\lfoot{\thepage}
+\rfoot{Eclipse Passage}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \lhead{\includegraphics[width=13pt]{glyph}}
+    \rhead{\leftmark}
+    \lfoot{\thepage}
+    \rfoot{Eclipse Passage}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \renewcommand{\footrulewidth}{0.5pt}
+}
+
+\setlength{\headheight}{16pt}
 
 \title{Eclipse Passage User Guide}
-\author{ArSysOp Limited}
+\author{ArSysOp}
 \date{26 June 2021}
 
 \begin{document}
@@ -31,28 +58,34 @@ urlcolor=black}
         \Huge
         \textbf{Eclipse Passage User Guide}
 
-        
+        \vspace{0.5cm}
+
+        \Large
+        \today
+
         \vfill
-        
-        \includegraphics[width=4cm]{passage}
-        
+
+        \includegraphics[width=5cm]{passage}
+
         \vfill
 
         \Large
-        ArSysOp Limited, 2021
+        ArSysOp
     \end{center}
 \end{titlepage}
 
 \tableofcontents
+\markboth{Table of Contents}{}
 
 \addcontentsline{toc}{chapter}{Introduction}
 \chapter*{Introduction}
+\markboth{Introduction}{}
 
 \addcontentsline{toc}{section}{Overview}
 \section*{Overview}
 
 \textbf{Eclipse Passage} is a set of tools providing rich and easily adaptable capabilities to declare and control licensing constraints.
-Being an open-source project under Eclipse Foundation, it is entirely developed with Java 11 by the \textit{Arsysop Limited} company.
+Being an open-source project under Eclipse Foundation, it is entirely developed with Java 11 by the \textit{Arsysop} company.
 
 This user guide contains a glossary, which gives you base understanding of terms used in Eclipse Passage and two sets of instructions: for developer, who
 wants to license some features or entire application with Passage, and for operator, who wants to manage licenses and metadata with the Eclipse Passage Operator.
@@ -64,6 +97,8 @@ Happy Reading!
 
 If you found a mistake in the text or just want to improve this user guide, feel free to contribute on \href{https://github.com/eclipse-passage/passage-docs}{Github} repository.
 
+Also we want to remind that Eclipse Passage is an open-source project, so you can always contribute to the project \href{https://github.com/eclipse-passage/passage}{itself}.
+
 \addcontentsline{toc}{section}{License}
 \section*{License}
 
@@ -71,6 +106,9 @@ These materials are made available under the terms of the \href{https://www.ecli
 
 \addcontentsline{toc}{chapter}{Components}
 \chapter*{Components}
+\markboth{Components}{}
+
+Eclipse Passage consists of three parts:
 
 \addcontentsline{toc}{section}{Licensing Components}
 \section*{Licensing Components}
@@ -95,21 +133,17 @@ application. When user finishes his work with the application, the license is re
 
 \addcontentsline{toc}{chapter}{Developer's guide}
 \chapter*{Developer's guide}
+\markboth{Developer's guide}{}
 
 This section is under construction for now.
 
 \addcontentsline{toc}{chapter}{Eclipse Operator User Guide}
 \chapter*{Eclipse Operator User Guide}
-
-This section is under construction for now.
-
-\addcontentsline{toc}{chapter}{Common Problems}
-\chapter*{Common Problems}
-
-This section is under construction for now.
+\markboth{Eclipse Operator User Guide}{}
 
 \addcontentsline{toc}{chapter}{Glossary}
 \chapter*{Glossary}
+\markboth{Glossary}{}
 
 This section is under construction for now.
 
