@@ -45,7 +45,7 @@ urlcolor=gray}
 
 \setlength{\headheight}{16pt}
 
-\title{Eclipse Passage User Guide}
+\title{Passage Operator User Guide}
 \author{ArSysOp}
 \date{26 June 2021}
 
@@ -56,7 +56,7 @@ urlcolor=gray}
         \vspace*{1cm}
 
         \Huge
-        \textbf{Eclipse Passage User Guide}
+        \textbf{Passage Operator User Guide}
 
         \vspace{0.5cm}
 
@@ -77,12 +77,12 @@ urlcolor=gray}
 \tableofcontents
 \markboth{Table of Contents}{}
 
-\addcontentsline{toc}{chapter}{Introduction}
 \chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
 \markboth{Introduction}{}
 
-\addcontentsline{toc}{section}{Overview}
 \section*{Overview}
+\addcontentsline{toc}{section}{Overview}
 
 \textbf{Eclipse Passage} is a set of tools providing rich and easily adaptable capabilities to declare and control licensing constraints.
 Being an open-source project under Eclipse Foundation, it is entirely developed with Java 11 by the \textit{ArSysOp} company.
@@ -92,38 +92,38 @@ wants to license some features or entire application with Passage, and for opera
 
 Happy Reading!
 
-\addcontentsline{toc}{section}{Contribution}
 \section*{Contribution}
+\addcontentsline{toc}{section}{Contribution}
 
 If you found a mistake in the text or just want to improve this user guide, feel free to contribute on \href{https://github.com/eclipse-passage/passage-docs}{Github} repository.
 
 Also we want to remind that Eclipse Passage is an open-source project, so you can always contribute to the project \href{https://github.com/eclipse-passage/passage}{itself}.
 
-\addcontentsline{toc}{section}{License}
 \section*{License}
+\addcontentsline{toc}{section}{License}
 
 These materials are made available under the terms of the \href{https://www.eclipse.org/legal/epl-2.0/}{Eclipse Public License 2.0}.
 
-\addcontentsline{toc}{chapter}{Components}
 \chapter*{Components}
+\addcontentsline{toc}{chapter}{Components}
 \markboth{Components}{}
 
 Eclipse Passage consists of three parts:
 
-\addcontentsline{toc}{section}{Licensing Components}
 \section*{Licensing Components}
+\addcontentsline{toc}{section}{Licensing Components}
 
 Licensing Components is a set of tools you have to include in your application to be able to declare any licensing logic (For example, what to do if a correct license was not acquired by the licensing framework).
 It allows you to restrict unauthorized using of a single feature, bundle or even the whole application.
 
-\addcontentsline{toc}{section}{Operator}
 \section*{Operator}
+\addcontentsline{toc}{section}{Operator}
 
 Operator client is a separate application giving you a manual control under all the licenses your product can have (both personal and floating). Also, it is required
 in access cycle in order to define the product or/and features metadata and to generate keypair for license file encoding.
 
-\addcontentsline{toc}{section}{Floating License Server}
 \section*{Floating License Server}
+\addcontentsline{toc}{section}{Floating License Server}
 
 Eclipse Passage FLS is a component implementing the Floating License Server concept. Works roughly in a way described below.
 
@@ -131,21 +131,15 @@ The licensee acquires (in any way) a finite number of licenses and these license
 they request a license from the server, and if the license pool is not empty (in other words, there are still licenses available), the server gives user an access to the
 application. When user finishes his work with the application, the license is released and can be obtained by the other authorized user.
 
-\addcontentsline{toc}{chapter}{Developer's guide}
-\chapter*{Developer's guide}
-\markboth{Developer's guide}{}
+\chapter*{Passage Operator User Guide}
+\addcontentsline{toc}{chapter}{Passage Operator User Guide}
+\markboth{Passage Operator User Guide}{}
 
-This section is under construction for now.
-
-\addcontentsline{toc}{chapter}{Eclipse Operator User Guide}
-\chapter*{Eclipse Operator User Guide}
-\markboth{Eclipse Operator User Guide}{}
-
-\addcontentsline{toc}{section}{Introduction}
 \section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
 
-\addcontentsline{toc}{subsection}{Main concepts}
 \subsection*{Main concepts}
+\addcontentsline{toc}{subsection}{Main concepts}
 
 The best approach to learn any existing user interface is understanding the concepts it is based on. In Eclipse Passage worldview the product licensing sequence consits of three parts:
 
@@ -157,8 +151,8 @@ The best approach to learn any existing user interface is understanding the conc
 
 These are three main steps to have your features properly licensed with Passage Operator.
 
-\addcontentsline{toc}{subsection}{UI Overview}
 \subsection*{UI Overview}
+\addcontentsline{toc}{subsection}{UI Overview}
 
 Eclipse Passage Operator's initial layout is quite simple: dashboard with all products, features, users and license plans contained in your workspace; workbench part (initially filled with welcome page),
 where you you usually deal with some licensing data (E. g. you can define your features here), top toolbar with some useful wizards and controls, two buttons to issue a license.
@@ -167,13 +161,13 @@ where you you usually deal with some licensing data (E. g. you can define your f
     \includegraphics[width=\textwidth]{ui}
 \end{center}
 
-\addcontentsline{toc}{section}{How to license your product}
 \section*{How to license your product}
+\addcontentsline{toc}{section}{How to license your product}
 
 This tutorial contains three parts mapped with three licensing steps mentioned in the section above.
 
-\addcontentsline{toc}{subsection}{Definition}
 \subsection*{Definition}
+\addcontentsline{toc}{subsection}{Definition}
 
 First of all, we have to define what our product is. To be more concise with the reader, tutorial at all is provided with examples based on Eclipse Passage commercial version (Cordon).
 
@@ -206,7 +200,7 @@ Press \textit{Show} near the Product lines count. Now you see the workbench with
     \includegraphics[width=0.75\textwidth]{product_create}
 \end{center}
 
-On your product line with right click open the context menu, where you will see an option named \textit{Product}. Pressing it you define new product under the selected product line. 
+On your product line with right click open the context menu, where you will see an option named \textit{Product}. Pressing it you define new product under the selected product line.
 Let it be the Cordon Operator in our case. Fill all the required fields and optional fields if needed.
 
 \begin{center}
@@ -243,23 +237,108 @@ Like the product under product line, create the feature under feature set with t
     \includegraphics[width=0.75\textwidth]{feature_dialog}
 \end{center}
 
-Now we successfully defined our product exceptional feature. To have our product licensed at all, we need to define another feature with \textbf{the same identifier as the product has}. 
+Now we successfully defined our product exceptional feature. To have our product licensed at all, we need to define another feature with \textbf{the same identifier as the product has}.
 Also, developer must use the same identifier when they define their product with Eclipse.
 
-For now we have one product line, one product in it and some exceptional feature to be licensed separately. That's quite enough to proceed to the next part - \textbf{Evolution}.
+For now we have one product line, one product in it and some exceptional feature to be licensed separately. That's quite enough to proceed to the next part - \textbf{evolution}.
 
-\addcontentsline{toc}{subsection}{Evolution}
 \subsection*{Evolution}
+\addcontentsline{toc}{subsection}{Evolution}
 
+Now you defined the features product has, and developers can finally start working around it. When the first version is about to release, it's time to define
+a new product and feature versions.
 
+Let's define our first feature version. Press \textit{Show} button near the Feature sets count: you will see the workspace with two features
+you defined earlier (if you did, of course).
 
-\addcontentsline{toc}{subsection}{Licensing}
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{feature_set_show}
+\end{center}
+
+Then right-click on any feature (we will use previously mentioned stats feature), and then select Feature Version in the context menu.
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{feature_version_create}
+\end{center}
+
+The only thing you have to define here is feature version itself. In ArSysOp we usually prefer \href{https://semver.org/}{semantic versioning} to choose correct version names,
+so in this tutorial we will follow these simple rules (you can have a look at them at the provided website).
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{feature_version_created}
+\end{center}
+
+After all you will see something like this.
+
+\textit{Not really obvious, but important remark here is the idea, that in Passage every product \textbf{is} a set of features. In fact you can't license a product,
+    but you can license a feature, that represents the product at all or the feature "to launch product" - up to you.} So, let's create an .operator feature version as well.
+
+Now we can go on to the product version definition. Product version contains a set of feature versions: a single release - a single set of feature versions in it.
+
+Open the products workbench with \textit{Show} button near the product lines count.
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{product_line_show}
+\end{center}
+
+To create new product version, right-click in the workbench on the product you want to distribute.
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{product_version_create}
+\end{center}
+
+When you have created product version, after selecting it (just left-click on it) you will see \textit{Keys} button activated. 
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{product_version_keys}
+\end{center}
+
+Press it to generate a keypair to encode and decode license files.
+Passage uses asymmetric encoding to deal with license data (this is required to protect licenses from being stolen or falsified). Public and private keys are now located in passage workspace subfolder representing your product
+(usually passage workspace is located under your user home folder), you have to share the public one with your developer to include it into the product. The private one remains with you to issue
+licenses for your product.
+
+If you see private and public key fields colored in white (instead of red they were), you've done all right.
+
+Now let's fill our product version with feature versions (as we mentioned above, the product is a set of features).
+
+First, create new product version feature under your product version: this node binds feature version to product version.
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{product_feature_create}
+\end{center}
+
+When the version is created, select the feature you want to include, then type in the version you created earlier and select the restriction level.
+
+\begin{center}
+    \includegraphics[width=0.75\textwidth]{product_feature_created}
+\end{center}
+
+\paragraph*{Restriction Levels}
+\addcontentsline{toc}{paragraph}{Restriction Levels}
+
+\subparagraph*{Info}
+This restriction level means that unauthorized usage of your feature is not really bad for your business logic. If user won't have a license for the feature with this restriction
+level, they won't even be notified. No restriction in fact.
+
+\subparagraph*{Warn}
+This one means that user will be able to use feature if he has no appropriate license, but also they will be notified that it's better to obtain a license for this feature.
+
+\subparagraph*{Error}
+Selecting this level restricts any unauthorized usage of the feature. If the user tries to use it with no license, the framework will interrupt him and offer to obtain a license in any way.
+
+\subparagraph*{Fatal}
+It is generally used for product definition features to hardly restrict even a launch of the product with no license.
+
+After all, add all your features you want to include in your product version and then you are ready to start issuing licenses.
+
 \subsection*{Licensing}
+\addcontentsline{toc}{subsection}{Licensing}
 
 
 
-\addcontentsline{toc}{chapter}{Glossary}
 \chapter*{Glossary}
+\addcontentsline{toc}{chapter}{Glossary}
 \markboth{Glossary}{}
 
 \paragraph*{Feature}
