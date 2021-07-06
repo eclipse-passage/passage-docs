@@ -2,6 +2,7 @@
 
 ## Eclipse Passage Documentation
 
+[![Build Status](https://github.com/eclipse-passage/passage-docs/workflows/CI/badge.svg)](https://github.com/eclipse-passage/passage-docs/actions)
 [![Hits-of-Code](https://hitsofcode.com/github/eclipse-passage/passage?branch=master)](https://hitsofcode.com/github/eclipse-passage/passage?branch=master/view?branch=master)
 
 ###### License 
