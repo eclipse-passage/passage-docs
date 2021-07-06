@@ -24,6 +24,14 @@ jobs:
           tex_path: 'src/tex/operator-user-guide.tex'
           push: 'no'
 
+      - name: Build FLS Administration Guide
+        uses: vinay0410/tectonic-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tex_path: 'src/tex/fls-administration-guide.tex'
+          push: 'no'
+
       - name: Promote Generated PDFs
         run: cp ./src/tex/*.pdf ./pdf
 
