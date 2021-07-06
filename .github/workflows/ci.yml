@@ -12,32 +12,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
     steps:
       - name: checkout sourcebase
         uses: actions/checkout@v2
 
       - name: Go to LaTeX sources
-        run: cd src/tex
+        run: cd ./src/tex
+
+      - name: Where are we?
+        run: pwd
 
       - name: Build Operator User Guide
-        uses: vinay0410/tectonic-action@master
+        uses: vinay0410/tectonic-action@vv1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tex_path: 'operator-user-guide.tex'
+          tex_path: './operator-user-guide.tex'
           push: 'no'
 
-      - name: Build FLS AdministrationGuide
-        uses: vinay0410/tectonic-action@master
+      - name: Build FLS Administration Guide
+        uses: vinay0410/tectonic-action@vv1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tex_path: 'fls-administration-guide.tex'
+          tex_path: './fls-administration-guide.tex'
           push: 'no'
 
       - name: Go to root dir
-        run: cd ../..
+        run: cd ./../..
 
       - name: Promote Generated PDFs
         run: cp ./src/tex/*.pdf ./pdf
