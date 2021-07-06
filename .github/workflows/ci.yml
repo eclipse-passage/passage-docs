@@ -16,12 +16,20 @@ jobs:
       - name: checkout sourcebase
         uses: actions/checkout@v2
 
-      - name: LaTeX make
+      - name: Build Operator User Guide
         uses: vinay0410/tectonic-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tex_path: 'src/tex/operator-user-guide.tex'
+          push: 'no'
+
+      - name: Build FLS AdministrationGuide
+        uses: vinay0410/tectonic-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tex_path: 'src/tex/fls-administration-guide.tex'
           push: 'no'
 
       - name: Promote Generated PDFs
