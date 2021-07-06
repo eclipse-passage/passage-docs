@@ -14,4 +14,5 @@ Documentation for [Eclipse Passage](https://projects.eclipse.org/projects/techno
 
 ### How to use
 
- - [GitHub Pages](https://eclipse-passage.github.io/passage-docs)
+ - View [GitHub Pages](https://eclipse-passage.github.io/passage-docs)
+ - Gain the latest version of [Eclipse Passage Operator user Guide](https://github.com/eclipse-passage/passage-docs/blob/master/pdf/operator-user-guide.pdf)

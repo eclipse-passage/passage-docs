@@ -1,4 +1,4 @@
-name: Latex Compiling
+name: CI
 
 on:
   push:
