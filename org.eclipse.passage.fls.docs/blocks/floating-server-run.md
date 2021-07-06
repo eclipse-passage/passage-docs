@@ -17,12 +17,16 @@ Cli Options
   
 Cli commands 
 ---
-Lifecycle commands: 
+Lifecycle commands (scope `fls`): 
  - start 
  - stop 
  - restart
+ - state
  
-FLS licensing commands: 
+Administration commands (scope `fls`):
+ - upload
+ 
+FLS licensing commands (scope `self`): 
  - licstatus 
  - licrequest
 

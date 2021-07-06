@@ -21,7 +21,7 @@ Documentation for [Eclipse Passage](https://projects.eclipse.org/projects/techno
 ### How to contribute
 To participate in `Eclipse Passage Operator User Guide`
   - fork us
-  - make alternations to [LaTex source](https://github.com/eclipse-passage/passage-docs/blob/master/src/tex/operator-user-guide.tex)
+  - make alternations to [LaTeX sources](https://github.com/eclipse-passage/passage-docs/blob/master/src/tex/operator-user-guide.tex)
   - submit a pull request
 
 If you want to build it locally

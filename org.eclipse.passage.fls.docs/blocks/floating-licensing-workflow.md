@@ -6,10 +6,10 @@ actors: app-dev, lic-operator, app-user, agent
 How floating licensing works
 ===
 
-As opposed to personal licensing, where a user of a product-under-licensing gets one's own license pack and hosts it close to the product for single use,
+As opposed to personal licensing, where a user of a product-under-licensing gets their own license pack and hosts it close to the product for single use,
 floating licensing delegates actual license packs hosting and executing to a dedicated agent - Floating License Server. 
 
-This allows number of users to exploit their installations of our product simultaneously in the scope of one floating license pack. 
+This allows number of users to exploit their installations of the product simultaneously in the scope of a single floating license pack. 
   
 Floating License Server
 ---
@@ -37,5 +37,5 @@ There are four actors in the floating licensing workflow:
       - [configures product to use Floating License Server]();
 - _operator_, who [issues](issue-floating-license-pack.md) a [floating license pack](floating-license-pack.md), and delivers it to client
 - _agent_, who [installs](floating-server-install.md) and [runs](floating-server-run.md) a Floating License Server,
-- _client_ as a representative of a set of the product _users_, who [deploys floating license pack](floating-license-pack.md).
+- _client_ as a representative of a set of the product _users_, who [deploys personal part of the floating license pack](floating-license-pack.md).
 
