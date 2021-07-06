@@ -16,18 +16,12 @@ jobs:
       - name: checkout sourcebase
         uses: actions/checkout@v2
 
-      - name: Go to LaTeX sources
-        run: cd ./src/tex
-
-      - name: Where are we?
-        run: ls ./
-
       - name: Build Operator User Guide
         uses: vinay0410/tectonic-action@v1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tex_path: './operator-user-guide.tex'
+          tex_path: './src/tex/operator-user-guide.tex'
           push: 'no'
 
       - name: Build FLS Administration Guide
@@ -35,11 +29,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tex_path: './fls-administration-guide.tex'
+          tex_path: './src/tex/fls-administration-guide.tex'
           push: 'no'
-
-      - name: Go to root dir
-        run: cd ./../..
 
       - name: Promote Generated PDFs
         run: cp ./src/tex/*.pdf ./pdf
