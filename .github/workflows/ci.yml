@@ -20,7 +20,7 @@ jobs:
         run: cd ./src/tex
 
       - name: Where are we?
-        run: pwd
+        run: ls ./
 
       - name: Build Operator User Guide
         uses: vinay0410/tectonic-action@v1.1.2
