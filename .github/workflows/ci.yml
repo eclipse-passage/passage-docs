@@ -23,7 +23,7 @@ jobs:
         run: pwd
 
       - name: Build Operator User Guide
-        uses: vinay0410/tectonic-action@vv1.1.2
+        uses: vinay0410/tectonic-action@v1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -31,7 +31,7 @@ jobs:
           push: 'no'
 
       - name: Build FLS Administration Guide
-        uses: vinay0410/tectonic-action@vv1.1.2
+        uses: vinay0410/tectonic-action@v1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
