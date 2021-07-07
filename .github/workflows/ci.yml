@@ -38,6 +38,7 @@ jobs:
       - name: Push PDFs
         uses: EndBug/add-and-commit@v7
         with:
-          default_author: eparovyshnaya
+          author_name: eparovyshnaya
+          author_email: elena.parovyshnaya@gmail.com
           message: 'autobuilt documentation update'
           add: '*.pdf'
