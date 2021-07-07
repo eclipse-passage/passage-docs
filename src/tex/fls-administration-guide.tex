@@ -126,7 +126,6 @@ The Server can lease several grants for the same feature at the same time, as ho
 There are four \textit{actors} in the floating licensing workflow:
 
 \begin{itemize}
-
 	\item \textit{product development and management}, where
 		\begin{itemize}
 		    \item management \textit{defines products}, \textit{feature sets} and \textit{product release plan} and
@@ -137,23 +136,110 @@ There are four \textit{actors} in the floating licensing workflow:
 		      		\item  \textit{configures the product to use Floating License Server};
 		      	\end{itemize}
       	\end{itemize}
-	\item \textit{operator}, who~\hyperref[ch:issue-flp]{issues} a~\hyperref[ch:flp]{floating license pack} and delivers it,  
+	\item \textit{operator}, who issues a~\hyperref[ch:flp]{floating license pack} and delivers it,  
 	\item \textit{agent}, who~\hyperref[ch:install-fls]{installs} and~\hyperref[ch:run-fls]{runs} a Floating License Server,
-	\item \textit{client} as a representative of set of the product \textit{users}, who 
-    deploys personal part of a \textit{floating license pack}.
+	\item \textit{client} as a representative for a set of phisical users of the product \textit{users}, which are enlisted in a \textit{floating license pack}.
 
 \end{itemize} 
 
-\addcontentsline{toc}{chapter}{Floating license pack}
-\chapter*{Floating license pack} \label{ch:flp}
+\addcontentsline{toc}{chapter}{What is in a Floating License Pack}
+\chapter*{What is in a Floating License Pack} \label{ch:flp}
 
-\addcontentsline{toc}{chapter}{Issue floating license pack}
-\chapter*{Issue Floating license pack} \label{ch:issue-flp}
+\addcontentsline{toc}{section}{Pack}
+\section*{Pack} \label{sec:flp-pack}
+
+When operator issues a floating license pack, it resides in a folder named after the \textit{pack identifier} like 
+\textit{d2b83215-b65d-4031-a8c8-a10421d56260}. Name of each file in the folder starts with this identifier as well. 
+The folder contains all necessary data for all parties involved in floating licensing. 
+
+\addcontentsline{toc}{section}{Files}
+\section*{Files} \label{sec:flp-files}
+There are in the folder
+\begin{itemize}
+	\item \textbf{license files}, which contain list of all users eligible for the license and any feature can be used by it; they should be ~\hyperref[sec:fls-commands-upload]{passed under control} of \textbf{Floating License Server} 
+	\item optionally, \textbf{floating access files}, one per user, which keep connection and authentication credentials of the Server; there files are to be passed to each user mentioned in floating the license pack.
+\end{itemize}
+
+Table \ref{tabular:sample-pack-content} shows a typical file structure of a floating license pack, delivered to a client.
+\begin{table}[ht]
+\caption{Sample floating license pack content}
+\label{tabular:sample-pack-content}
+\begin{center}
+	\begin{tabular}{p{0.2\linewidth}p{0.2\linewidth}p{0.5\linewidth}}
+		\textbf{File} & \textbf{Role} & \textbf{Action} \\  \hline
+		\textit{pack-id}.flicen & Encrypted license & Pass to agent to be deployed under Floating License Server. \\  \hline
+		\textit{product-id}\_\textit{product-version}.pub & Product's public key & Pass to agent to be deployed under Floating License Server, together with the license file. \\ \hline  
+		\textit{pack-id}\_\textit{user-id}.flaen & Encrypted floating access file & Pass to the mentioned user to be stored close to their installation of the product. \\  \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+\addcontentsline{toc}{section}{Content}
+\section*{Content} \label{sec:flp-content}
+
+\addcontentsline{toc}{subsection}{Floating license file}
+\subsection*{Floating license file} \label{sec:flp-content-lic}
+Floating license File \textit{*.flicen} accumulates
+\begin{itemize}
+  \item \textbf{Floating License Server authentication} information, as each floating license is to be released for a particular residence. A license is not intended to be functional in case it is deployed on a server, that cannot be authenticated with these credentials;
+  \item enlistment of all \textbf{users allowed to exploit the product} - their identifiers, authentication conditions, other info;
+  \item list of product features that can be used in the scope of this license pack, associated with the amount of available grants (simultaneous usages).
+\end{itemize}
+
+A product, running on a \textit{user}'s installation, \textit{acquires a grant} for a \textit{feature}, 
+which is valid for short period (\textit{vivid} for 60 minutes by default). 
+Since a grant is acquired, it's not accessible until it is released. 
+
+After the \textit{feature}'s work is over, the product \textit{releases the grant} and thus it becomes available for acquisition again.
+
+\addcontentsline{toc}{subsubsection}{Feature grant capacity}
+\subsubsection*{Feature grant capacity} \label{sec:flp-content-capacily}
+Several product installations (users) can acquire different grants for the same feature for overlapping time slots. 
+Feature grant's \textit{capacity} field defines this amount.
+If there are no more available grants, the acquisition fails, and the product blocks the feature utilization. 
+
+\addcontentsline{toc}{subsubsection}{Feature grant vivid}
+\subsubsection*{Feature grant vivid} \label{sec:flp-content-vivid}
+A feature grant, been leased for a user, should not last long. 
+Thus, a feature grant information contain instruction on how \textit{vivid} is the grant. 
+Measured in minutes, it defines how long will the grant be valid after leased (limited by the whole license pack validity period).
+After this relatively short vivid period the grant is not active, but still acquired until is explicitly released.
+
+\addcontentsline{toc}{subsubsection}{Feature grant validity period}
+\subsubsection*{Feature grant validity period} \label{sec:flp-content-valid}
+A feature grant can define its own validity period. 
+Even if it is declared to be wider than the owning license pack validity period, at runtime the former is still limited by the latter.
+This feature is used by licensing party to narrow validity period for a particular feature in the pack.
+
+\addcontentsline{toc}{subsection}{Floating access file}
+\subsection*{Floating access file} \label{sec:flp-content-access}
+A product installation, been located on a user's workspation, needs to be told how to access a Floating License Server.
+
+Floating access file delivers this information. It contains:
+\begin{itemize}
+  \item user identifier,
+  \item the Server connection url components: ip address and port,
+  \item the Server authentication condition.
+\end{itemize} 
+
+Each user enlisted in the license file should posess such an access file and host it where the product is configured to look for it.
+Usually it is the product's folder under default \textit{.passage} data directory: \textit{user-home}/.passage/\textit{product-id}/\textit{product-version} 
+
+\addcontentsline{toc}{section}{Destination}
+\section*{Destination} \label{sec:flp-destination}
+
+Floating license files are to be ~\hyperref[sec:fls-commands-upload]{put under control} of the Floating License Server for which this floating license pack has been issued.
 
 \addcontentsline{toc}{chapter}{Install Floating License Server}
 \chapter*{Install Floating License Server} \label{ch:install-fls}
 
 \addcontentsline{toc}{chapter}{Run Floating License Server}
 \chapter*{Run Floating License Server} \label{ch:run-fls}
+
+\addcontentsline{toc}{chapter}{Run Floating License Server}
+\chapter*{Run Floating License Server} \label{ch:fls-commands}
+
+\addcontentsline{toc}{section}{Upload floating license pack to FLS}
+\section*{Upload floating license pack} \label{sec:fls-commands-upload}
 
 \end{document}
