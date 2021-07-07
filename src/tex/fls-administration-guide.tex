@@ -233,13 +233,94 @@ Floating license files are to be ~\hyperref[sec:fls-commands-upload]{put under c
 \addcontentsline{toc}{chapter}{Install Floating License Server}
 \chapter*{Install Floating License Server} \label{ch:install-fls}
 
+Floating License Server is distributed in OS-specific archives, which does not need to be installed, just unpacked. 
+
+Nevertheless, server executable should be granted with all the necessary permissions
+\begin{itemize}
+  \item to its working directory,
+  \item to the directory where the Server hosts license packs.
+\end{itemize} 
+
+The Server is implemented over \textbf{Java 11}, 
+so make sure that \textit {java -version} reports proper version and this runtime is available for the server executable.
+
 \addcontentsline{toc}{chapter}{Run Floating License Server}
 \chapter*{Run Floating License Server} \label{ch:run-fls}
 
-\addcontentsline{toc}{chapter}{Run Floating License Server}
-\chapter*{Run Floating License Server} \label{ch:fls-commands}
+Start the Server executable located in the root of the unpacked content. 
+It triggers \textit{osgi} console and there immediately starts the Server. The console is used for the Server administration.
 
-\addcontentsline{toc}{section}{Upload floating license pack to FLS}
-\section*{Upload floating license pack} \label{sec:fls-commands-upload}
+\addcontentsline{toc}{section}{Command line parameters}
+\section*{Command line parameters} \label{ch:run-fls-cli}
+
+Server runtime can be configured with the command line parameters for the Server executable, enlisted in Table \ref{tabular:server-params}:
+
+\begin{table}[ht]
+\caption{Floating License Server command line parameters}
+\label{tabular:server-params}
+\begin{center}
+	\begin{tabular}{p{0.2\linewidth}p{0.26\linewidth}p{0.5\linewidth}}
+		\textbf{Parameter} & \textbf{Default} & \textbf{Usage} \\  \hline
+		\textit{-server.port} & 8090 & \textit{-server.port=8089} will start the Server which will use the specified port for http communications.\\  \hline
+		\textit{-server.storage} & \textit{user-home}/.passage & Path to directory where the Server is expected to keep floating licenses packs. \\  \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+\addcontentsline{toc}{section}{Commands}
+\section*{Commands} \label{ch:run-fls-commands}
+
+\addcontentsline{toc}{subsection}{Lifecycle commands}
+\subsection*{Lifecycle commands} \label{ch:run-fls-commands-lc}
+ 
+The Server can be stopped and restarted from the console. 
+
+\begin{table}[h!t]
+\caption{Server Administration Commands | Lifecycle}
+\label{tabular:server-commands-lc}
+\begin{center}
+	\begin{tabular}{p{0.3\linewidth}p{0.65\linewidth}}
+		\textbf{Command} & \textbf{Output} \\  \hline
+		\textgreater \textit{ fls:stop} & Stops the Server\\  \hline
+		\textgreater \textit{ fls:start} & Starts the Serve.\\  \hline
+		\textgreater \textit{ fls:restart} & Restarts the Server\\  \hline
+		\textgreater \textit{ fls:state} & Reports either the Server is currently started or stopped\\ \hline
+		\textgreater \textit{ exit} & Terminates the Server and exit the administration console\\ \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+\addcontentsline{toc}{subsection}{Self licensing commands}
+\subsection*{Self licensing commands} \label{ch:run-fls-commands-lc}
+
+Floating License Server itself is a product licensed with Passage. 
+That means you should put proper personal license for the Server under 
+\textit{user-home}/.passage/\textit{server-product-id}/\textit{server-product-version} folder.
+
+\begin{table}[ht]
+\caption{Server Administration Commands | Self Licensing}
+\label{tabular:server-commands-lic}
+\begin{center}
+	\begin{tabular}{p{0.3\linewidth}p{0.65\linewidth}}
+		\textbf{Command} & \textbf{Output} \\  \hline
+		\textgreater \textit{ self:licstatus} & Reports current licensing status of the Floating License Server product.\\  \hline
+		\textgreater \textit{ self:licrequest} & Reports complete platform assessment, which is necessary to request a license for the Server from a licensing operator. \\  \hline
+	\end{tabular}
+\end{center}
+\end{table}
+
+\addcontentsline{toc}{subsection}{Manage Floating License Packs}
+\subsection*{Manage Floating License Packs} \label{sec:run-fls-commands-lp}
+
+\addcontentsline{toc}{subsubsection}{Upload Floating License Pack }
+\subsubsection*{Upload Floating License Pack} \label{sec:run-fls-commands-lp-u}
+
+Use \textit{fls:upload} command to put a floating license pack under the Server control. 
+
+\textgreater \textit{ fls:upload path/to/a/fl-pack-folder/like/0803cf43-b9ce-4051-bcb8-15ccf00f036b/}
+
+
+The Server reads the pack and places \textit{*.flicen} and \textit{*.pub} files under the directory, 
+~\hyperref[ch:run-fls-cli]{condifured} by \textit{storage} parameter. 
 
 \end{document}
