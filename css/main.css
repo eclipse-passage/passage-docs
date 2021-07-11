@@ -1,9 +1,18 @@
 body {
-	width: 95%;
-	line-height: 1.5;
+	width: 100%;
+	line-height: 2;
 	background: white;
-	padding-left: 2%;
+	padding-left: 10%;
 }
+
+a {
+	color: inherit;
+}
+
+a:hover {
+	color: rgb(80, 90, 75);
+}
+
 
 .navigation {
 	text-align: center;
@@ -17,6 +26,8 @@ body {
 
 .titling {
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
 }
 
 .brief {
@@ -30,22 +41,32 @@ body {
 
 .section-header {
 	margin: 10px 10px 20px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 26px;
+	font-weight: 700;
+	color: #C43333;
 }
 
 .section-brief {
 	margin: 0px 10px 20px 10px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
 }
 
 .info-header {
-	
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #C43333;;
 }
 
 .info-content {
-	
+	font-family: 'Lato', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
 }
 
 .info-content ul {
 	text-align: left;
 	list-style: circle;
 }
-

@@ -26,6 +26,7 @@ Here is a typical file structure of a floating license pack:
 |:---|:---|:---|
 |`pack-id`.flic|Open text of the license|Keep it for history, analytics, billing. Do not share.|
 |`pack-id`.flicen|Encrypted license|Pass to agent to be deployed under Floating License Server.|
+|`product-id`_`product-version`.pub|Public key of the product|Pass to agent to be deployed under Floating License Server, together with the license file.|
 |`pack-id`_`user-id`.fla|Floating Server access file|Keep it. Do not share.|
 |`pack-id`_`user-id`.flaen|Encrypted floating access file|Pass to the mentioned user to be stored close to one's installation of our product.|
 
@@ -54,8 +55,8 @@ Measured in minutes, it defines how long will the grant be valid after leased (l
 After this relatively short vivid period the grant is not active, but still acquired until is explicitly released.
 
 ##### feature grant validity period
-A feature grant can define its own validity period. Even if it is declared to be wider than the owning license pack validity period, at runtime it is still limited by it.
-Use the ability if you want to narrow validity period for a particular feature in the pack.
+A feature grant can define its own validity period. Even if it is declared to be wider than the owning license pack validity period, at runtime the former is still limited by the latter.
+Operator applies the ability to narrow validity period for a particular feature in the pack.
  
 #### A floating access file (_*.fla_, _*.flaen_)
 A product installation needs to be told how to access a Floating License Server. 
