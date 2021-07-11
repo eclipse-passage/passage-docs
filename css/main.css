@@ -1,0 +1,51 @@
+body {
+	width: 95%;
+	line-height: 1.5;
+	background: white;
+	padding-left: 2%;
+}
+
+.navigation {
+	text-align: center;
+	margin: 15px 0px 40px 0px;
+}
+
+.nav-ref {
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.titling {
+	text-align: center;
+}
+
+.brief {
+	
+}
+
+.info-section {
+	text-align: center;
+	margin: 10px 10px 40px 10px;
+}
+
+.section-header {
+	margin: 10px 10px 20px 10px;
+}
+
+.section-brief {
+	margin: 0px 10px 20px 10px;
+}
+
+.info-header {
+	
+}
+
+.info-content {
+	
+}
+
+.info-content ul {
+	text-align: left;
+	list-style: circle;
+}
+
