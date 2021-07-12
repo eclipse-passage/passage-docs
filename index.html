@@ -9,55 +9,64 @@
 <meta name="description" content="">
 
 <link rel="icon" href="i/common/glyph.png">
-<title>sample</title>
+<title>Eclipse Passage</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap"
+	rel="stylesheet">
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="navigation container">
+	<div class="navigation container-fluid">
 		<div class="row">
-			<div class="col-sm nav-ref">
-				<a href="#features">Features</a>
+			<div class="col-sm nav-ref features">
+				<a class="anchor" href="#features">Features</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#products">Products</a>
+			<div class="col-sm nav-ref products">
+				<a class="anchor" href="#products">Products</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#examples">Examples</a>
+			<div class="col-sm nav-ref examples">
+				<a class="anchor" href="#examples">Examples</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#docs">Documentation</a>
+			<div class="col-sm nav-ref documentation">
+				<a class="anchor" href="#docs">Documentation</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#components">Components</a>
+			<div class="col-sm nav-ref components">
+				<a class="anchor" href="#components">Components</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#support">Support</a>
+			<div class="col-sm nav-ref support">
+				<a class="anchor" href="#support">Support</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#services">Services</a>
+			<div class="col-sm nav-ref services">
+				<a class="anchor" href="#services">Services</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#contact">Contact</a>
+			<div class="col-sm nav-ref contact">
+				<a class="anchor" href="#contact">Contact</a>
 			</div>
-			<div class="col-sm nav-ref">
-				<a href="#contribute">Contribute</a>
+			<div class="col-sm nav-ref contribute">
+				<a class="anchor" href="#contribute">Contribute</a>
 			</div>
 		</div>
 	</div>
-	<div class="titling container">
-		<div class="titling-brief">Passage is a set of libraries and
-			tools aimed to put your product under licensing protection.</div>
+	<div class="titling container-fluid">
+		<div class="row">
+			<div class="col-sm">
+				<img src="i/common/glyph.png" width="256">
+			</div>
+			<div class="col-sm">
+				<div class="titling-brief">Passage is a set of libraries and
+					tools aimed to put your product under licensing protection.</div>
+			</div>
+		</div>
 	</div>
-	<div class="info-section container">
+	<div class="features separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="features"></a>Features
+					<a class="anchor" name="features"></a>Features
 				</div>
 			</div>
 		</div>
@@ -69,34 +78,37 @@
 					Passage and Access Cycle (Passage runtime) take care of the rest.</div>
 			</div>
 			<div class="col-sm">
-				<div class="info-header">Flexible and deeply adaptable</div>
-				<div class="info-content">Passage runtime is designed with the
-					finest care in a series of services with simple functionality.
+				<div class="info-header">Flexible and adaptable</div>
+				<div class="info-content">
+					<a href="access-cycle.html">Passage runtime</a> is designed with
+					the finest care in a series of services with simple functionality.
 					While there are perfectly orchestrated set of well-functional
 					default implementations right out-of-the-box, API allows you to
 					contribute your particular algorithms in almost any place of Access
 					Cycle. This means you can affect the very process of license
-					checking to make it suit your peculiar needs.</div>
+					checking to make it suit your peculiar needs.
+				</div>
 			</div>
+			<div class="w-100"></div>
 			<div class="col-sm">
 				<div class="info-header">License issuing</div>
 				<div class="info-content">While Passage Access Cycle prevents
-					a product to be exploited without proper licensing, Passage
+					a product from being exploited without proper license, Passage
 					Operator product, an RCP application, is dedicated to the license
 					issuing. It helps to define and evolve product decomposition in
-					terms of licensing, lease and keep and trace issued licenses;
-					supplies analysis and reports.</div>
+					terms of licensing, lease, keep and trace issued licenses; supplies
+					analysis and reports.</div>
 			</div>
 			<div class="col-sm">
 				<div class="info-header">Floating licensing</div>
 				<div class="info-content">Passage supplies its own
 					implementation of floating license server, which is integrated and
-					tested on by-Passage-protected products.</div>
+					tested with products under Passage protection.</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="products separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
@@ -117,7 +129,8 @@
 					<div class="info-content">
 						Plug <span class="term">Passage Access Cycle</span> to your
 						product to empower licensing protection. It is ready to operate,
-						but can be flexibly tuned to the peculiarities of your product.
+						but can be flexibly tuned to address special demands of your
+						product.
 					</div>
 				</div>
 				<div class="col-sm">
@@ -143,10 +156,9 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="components separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
-
 				<div class="section-header">
 					<a name="components"
 						href="https://download.eclipse.org/passage/updates/release/2.0.1/"
@@ -183,11 +195,11 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="examples separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="examples"></a>Examples
+					<a class="anchor" name="examples"></a>Examples
 				</div>
 				<div class="section-brief">All Passage products are themselves
 					licensed by Passage</div>
@@ -222,11 +234,11 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="documentation separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="docs"></a>Documentation
+					<a class="anchor" name="docs"></a>Documentation
 				</div>
 			</div>
 		</div>
@@ -256,11 +268,11 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="support separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="support"></a>Support
+					<a class="anchor" name="support"></a>Support
 				</div>
 				<div class="section-brief">
 					Support for Passage components and product and for projects
@@ -311,11 +323,11 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="services separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="services"></a>Services
+					<a class="anchor" name="services"></a>Services
 				</div>
 				<div class="section-brief">
 					<div>Licensing of a product is a broad area. Despite Passage
@@ -345,13 +357,15 @@
 					runtime. Nevertheless, if your product needs something special, we
 					can implement it and integrate.</div>
 			</div>
+			<div class="w-100"></div>
 			<div class="col-sm">
 				<div class="info-header">Handle license issuing</div>
 				<div class="info-content">When your product is protected, lots
-					of new tasks related to license issuing open up: enter, keep and
-					manage data, distribute license, communicate with clients. Passage
-					Operator product helps to serve these needs, but we can take care
-					of all these tasks for you entirely.</div>
+					of new tasks related to license issuing open up: invent, keep and
+					manage licensing meta data, issue, store and distribute license,
+					communicate with clients. Passage Operator product helps to serve
+					these needs, but we can take care of all these tasks for you
+					entirely.</div>
 			</div>
 			<div class="col-sm">
 				<div class="info-header">Run a Floating License Server</div>
@@ -361,11 +375,11 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="contact separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="contact">Contacts</a>
+					<a class="anchor" name="contact">Contacts</a>
 				</div>
 			</div>
 		</div>
@@ -378,11 +392,19 @@
 					collaborate!</div>
 			</div>
 			<div class="col-sm">
+				<div class="info-header">Slack channel</div>
+				<div class="info-content">
+					Join <a href="https://arsysop.slack.com/">ArSysOp Slack Channel</a>
+					to ask Passage Team a question.
+				</div>
+			</div>
+			<div class="w-100"></div>
+			<div class="col-sm">
 				<div class="info-header">Join our mailing list</div>
 				<div class="info-content">
 					If you are interested in Passage project evolution, <a
 						href="https://accounts.eclipse.org/mailing-list/passage-dev">join
-						our mailing list</a> and to news from the first hands and ask
+						our mailing list</a> to get news from the first hands and ask
 					questions to the Team and community.
 				</div>
 			</div>
@@ -399,18 +421,18 @@
 		</div>
 	</div>
 
-	<div class="info-section container">
+	<div class="contribute separable info-section container-fluid">
 		<div class="row">
 			<div class="col-sm">
 				<div class="section-header">
-					<a name="contribute">Contribute</a>
+					<a class="anchor" name="contribute">Contribute</a>
 				</div>
 				<div class="section-brief">
 					Passage is an open source project developed by a small team of
 					seasoned engineers. It is available for use under terms of <a
 						href="https://spdx.org/licenses/EPL-2.0.html">Eclispe Public
-						License 2.0</a>, which means you can use it in a wide variety of ways.
-					We are always happy to get help with the <a
+						License 2.0</a>, which means you can utilize it in a wide variety of
+					ways. We are always happy to get help with the <a
 						href="https://bugs.eclipse.org/bugs/describecomponents.cgi?product=Passage">current
 						tasks</a>.
 				</div>
@@ -430,16 +452,13 @@
 				<div class="info-content">
 					Any help is welcome, including to-do-issues to <a
 						href="https://github.com/eclipse-passage/passage-docs/">Passage
-						Docs GitHub repository</a>.
+						Documentation GitHub repository</a>.
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<a href="" target="_blank"></a>
-
-
-	<footer class="container">
+	<div class="footer container-fluid">
 		<div class="row">
 			<div class="refs">
 				<div>
@@ -449,7 +468,7 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
 </body>
 
 </html>

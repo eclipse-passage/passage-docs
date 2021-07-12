@@ -1,50 +1,72 @@
 body {
-	width: 100%;
-	line-height: 2;
-	background: white;
-	padding-left: 10%;
+	color: rgb(33, 66, 66);
+	line-height: 1.3;
+	background-color: white;
 }
 
 a {
 	color: inherit;
+	text-decoration: none;
+}
+
+a:after {
+	content: '\27a4';
+	font-size: 14px;
+}
+
+a.anchor:after {
+	content: none;
 }
 
 a:hover {
 	color: rgb(80, 90, 75);
 }
 
-
 .navigation {
-	text-align: center;
-	margin: 15px 0px 40px 0px;
+	text-align: left;
+	margin: 0;
 }
 
 .nav-ref {
-	margin-left: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+	padding: 10px;
 	display: inline-block;
+	text-align: center;
+	color: #524948;
+	border-top: 10px solid;
+	border-bottom: 10px solid;
+	border-left-width: 0;
+	border-right-width: 0;
+}
+
+.nav-ref a {
+	text-decoration: none;
 }
 
 .titling {
-	text-align: center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
+	text-align: center;
+	margin: 40px 0;
 }
 
-.brief {
-	
+.titling-brief {
+	margin-top: 80px;
 }
 
 .info-section {
 	text-align: center;
-	margin: 10px 10px 40px 10px;
+	border-top-width: 20px;
+	border-top-style: solid;
 }
 
 .section-header {
-	margin: 10px 10px 20px 10px;
+	margin: 10px 0 20px 0;
 	font-family: 'Roboto', sans-serif;
 	font-size: 26px;
 	font-weight: 700;
-	color: #C43333;
+	color: #524948;
 }
 
 .section-brief {
@@ -57,16 +79,64 @@ a:hover {
 	font-family: 'Lato', sans-serif;
 	font-size: 20px;
 	font-weight: 700;
-	color: #C43333;;
+	color: #524948;;
+	margin-bottom: 10px;
+	border-bottom: 4px solid;
+	border-color: inherit;
 }
 
 .info-content {
 	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-weight: 500;
+	margin-bottom: 30px;
 }
 
 .info-content ul {
 	text-align: left;
 	list-style: circle;
+}
+
+.separable {
+	margin-bottom: 10px;
+}
+
+.features {
+	border-color: #B5DF53;
+}
+
+.products {
+	border-color: #FAC9B8;
+}
+
+.components {
+	border-color: #7EBDC2;
+}
+
+.examples {
+	border-color: #CEABB1;
+}
+
+.documentation {
+	border-color: #B4DC7F;
+}
+
+.support {
+	border-color: #DF9B6D;
+}
+
+.services {
+	border-color: #DB3069;
+}
+
+.contact {
+	border-color: #17BEBB;
+}
+
+.contribute {
+	border-color: #CE7B91;
+}
+
+.separable .row, .separable .col-sm {
+	border-color: inherit;
 }
