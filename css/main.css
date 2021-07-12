@@ -2,6 +2,7 @@ body {
 	color: rgb(33, 66, 66);
 	line-height: 1.3;
 	background-color: white;
+	font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -10,7 +11,7 @@ a {
 }
 
 a:after {
-	content: '\27a4';
+	content: ' \27a4 ';
 	font-size: 14px;
 }
 
@@ -45,13 +46,12 @@ a:hover {
 }
 
 .titling {
-	font-family: 'Roboto', sans-serif;
-	font-size: 20px;
 	text-align: center;
 	margin: 40px 0;
 }
 
 .titling-brief {
+	font-size: 20px;
 	margin-top: 80px;
 }
 
@@ -76,7 +76,6 @@ a:hover {
 }
 
 .info-header {
-	font-family: 'Lato', sans-serif;
 	font-size: 20px;
 	font-weight: 700;
 	color: #524948;;
@@ -86,15 +85,10 @@ a:hover {
 }
 
 .info-content {
-	font-family: 'Lato', sans-serif;
 	font-size: 16px;
 	font-weight: 500;
 	margin-bottom: 30px;
-}
-
-.info-content ul {
-	text-align: left;
-	list-style: circle;
+	border-color: inherit;
 }
 
 .separable {
@@ -137,6 +131,54 @@ a:hover {
 	border-color: #CE7B91;
 }
 
+.footer a:after {
+	content: none;
+	color: gray;
+}
+
+.legal {
+	padding: 10px;
+	background-color: #FFE3E3;
+	font-size: 12px;
+}
+
+.refs {
+	margin: 20px 0;
+	border-top: 1px solid lightgray;
+	padding-top: 10px; font-size : 10px;
+	font-size: 10px;
+}
+
 .separable .row, .separable .col-sm {
 	border-color: inherit;
+}
+
+.arsysop {
+	display: block;
+	font-size: 26px;
+}
+
+.arsysop img {
+	margin-right: 20px;
+}
+
+.arsysop a:after {
+	content: none;
+}
+
+.info-content ul {
+	text-align: left;
+	list-style: none;
+	border-color: inherit;
+}
+
+.info-content ul li {
+	padding-left: 10px;
+	margin-bottom: 5px;
+	border-left: 5px solid;
+	border-color: inherit;
+}
+
+.inner {
+	padding-left: 30px !important;
 }
