@@ -213,7 +213,7 @@ This feature is used by licensing party to narrow validity period for a particul
 
 \addcontentsline{toc}{subsection}{Floating access file}
 \subsection*{Floating access file} \label{sec:flp-content-access}
-A product installation, been located on a user's workspation, needs to be told how to access a Floating License Server.
+A product installation, been located on a user's workstation, needs to be told how to access a Floating License Server.
 
 Floating access file delivers this information. It contains:
 \begin{itemize}
@@ -222,7 +222,7 @@ Floating access file delivers this information. It contains:
   \item the Server authentication condition.
 \end{itemize} 
 
-Each user enlisted in the license file should posess such an access file and host it where the product is configured to look for it.
+Each user enlisted in the license file should possess such an access file and host it where the product is configured to look for it.
 Usually it is the product's folder under default \textit{.passage} data directory: \textit{user-home}/.passage/\textit{product-id}/\textit{product-version} 
 
 \addcontentsline{toc}{section}{Destination}
@@ -262,7 +262,7 @@ Server runtime can be configured with the command line parameters for the Server
 	\begin{tabular}{p{0.2\linewidth}p{0.26\linewidth}p{0.5\linewidth}}
 		\textbf{Parameter} & \textbf{Default} & \textbf{Usage} \\  \hline
 		\textit{-server.port} & 8090 & \textit{-server.port=8089} will start the Server which will use the specified port for http communications.\\  \hline
-		\textit{-server.storage} & \textit{user-home}/.passage & Path to directory where the Server is expected to keep floating licenses packs. \\  \hline
+		\textit{-server.storage} & \textit{user-home}/.passage & Path to directory where the Server is expected to keep floating license packs. \\  \hline
 	\end{tabular}
 \end{center}
 \end{table}
@@ -282,7 +282,7 @@ The Server can be stopped and restarted from the console.
 	\begin{tabular}{p{0.3\linewidth}p{0.65\linewidth}}
 		\textbf{Command} & \textbf{Output} \\  \hline
 		\textgreater \textit{ fls:stop} & Stops the Server\\  \hline
-		\textgreater \textit{ fls:start} & Starts the Serve.\\  \hline
+		\textgreater \textit{ fls:start} & Starts the Server\\  \hline
 		\textgreater \textit{ fls:restart} & Restarts the Server\\  \hline
 		\textgreater \textit{ fls:state} & Reports either the Server is currently started or stopped\\ \hline
 		\textgreater \textit{ exit} & Terminates the Server and exit the administration console\\ \hline
