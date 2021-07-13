@@ -1,62 +1,77 @@
 body {
-    font-family: Quicksand, sans-serif;
-    color: black;
-    margin: 40px 10%;
+	font-family: Quicksand, sans-serif;
+	color: black;
+	margin: 40px 10%;
 }
 
 span.term {
-    color: navy;
-    font-weight: 600;
+	color: navy;
+	font-weight: 600;
 }
 
 span.sample {
-    font-style: italic;
+	font-style: italic;
 }
 
 .note {
-    font-size: smaller;
-    color: darkgrey;
+	font-size: smaller;
+	color: darkgrey;
 }
 
 .emphasis {
-    font-style: italic;
+	font-style: italic;
 }
 
 a, a:visited {
-    color: darkgreen;
-    text-decoration: none;
-    font-weight: 600;
+	color: darkgreen;
+	text-decoration: none;
+	font-weight: 600;
 }
 
 a:hover {
-    background: lightgray;
+	background: lightgray;
 }
 
 img.built-in {
-    display: block;
+	display: block;
 }
 
 table.tasks {
-    border-spacing: 0px;
-    border-collapse: separate;
+	border-spacing: 0px;
+	border-collapse: separate;
 }
 
 table.tasks tr {
-    border-top: 1px dashed gray;
+	border-top: 1px dashed gray;
 }
 
 table.tasks td {
-    border-top: 1px dashed lightgray;
-    padding: 10px;
+	border-top: 1px dashed lightgray;
+	padding: 10px;
 }
 
 table.tasks td.task {
-    vertical-align: top;
-    font-size: 120%;
-    width: 30%;
-    border-right: 1px dashed lightgray;
+	vertical-align: top;
+	font-size: 120%;
+	width: 30%;
+	border-right: 1px dashed lightgray;
 }
 
 table.tasks td.solution {
-    font-size: 80%;
+	font-size: 80%;
+}
+
+.refs {
+	margin-top: 30px;
+	border-top: 1px solid lightgray;
+	padding-top: 20px;
+}
+
+.ref-entry {
+	display: inline-block;
+	font-size: 70%;
+}
+
+.copyright {
+	display: block;
 }
