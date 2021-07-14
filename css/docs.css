@@ -75,3 +75,17 @@ table.tasks td.solution {
 .copyright {
 	display: block;
 }
+
+.step-name {
+	font-family: Montserrat, sans-serif;
+	font-size: 120%;
+}
+
+.step-explanation {
+	
+	
+}
+
+.code{
+	margin: 15px 0;
+}

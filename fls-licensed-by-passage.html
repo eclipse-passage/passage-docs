@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example: Floating License Server</title>
+<script type="text/javascript" src="js/sh_main.min.js"
+	language="JavaScript"></script>
+<script type="text/javascript" src="js/lang/sh_java.min.js"
+	language="JavaScript"></script>
+<script type="text/javascript" src="js/lang/sh_xml.min.js"
+	language="JavaScript"></script>
+<script type="text/javascript" src="js/lang/sh_properties.min.js"
+	language="JavaScript"></script>
+<link href="css/sh_whitengrey.min.css" rel="stylesheet" type="text/css"
+	media="all" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap"
+	rel="stylesheet">
+<link href="css/docs.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="sh_highlightDocument();">
+	<div class="titling">
+		<p>
+			<a
+				href="https://download.eclipse.org/passage/downloads/release/2.0.1/fls/">Eclipse
+				Passage Floating License Server</a> is itself a product <a
+				href="dev-guide.html">licensed with Passage</a>.
+		</p>
+		<p>Let's examine which steps it took to get protected with
+			license.</p>
+	</div>
+	<div class="container">
+		<div class="row statement">
+			<div class="step-name col-sm-4">
+				<span class="term">licensing requirements</span>
+			</div>
+			<div class="step-explanation col-sm-8">
+				<p>
+					FLS designers defined three <span class="term">feature</span>s for
+					this product, meaning these three functions are designed not to be
+					used without licensing permission:
+				</p>
+				<ul>
+					<li><span class="sample">org.eclipse.passage.lbc.fls.product</span>
+						- feature of the product as a whole and thus must be identified
+						with the <span class="sample">product id</span>;</li>
+					<li><span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
+						- base, limited edition of one particular internal function;</li>
+					<li><span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
+						- unlimited edition of the same functionality.</li>
+				</ul>
+				<p>It was also agreed (usually defined by marketing department),
+					that the first two features is allowed to be used in an absence of
+					a license, but with warnings that remind user of insufficient
+					license coverage.</p>
+				<p>The last feature can be used only when licensed properly.</p>
+			</div>
+
+		</div>
+		<div class="row impl">
+			<div class="col-sm-3">
+				Thus, developer declares <span class="term">licensing
+					requirements</span> for these three features
+			</div>
+			<div class="col-sm-8">
+				<ul>
+					<li>
+						<p>
+							<span class="term">Licensing requirements</span> for the core
+							product feature <span class="sample">org.eclipse.passage.lbc.fls.product</span>
+							is declared in <a
+								href="https://github.com/eclipse-passage/passage/tree/master/bundles/org.eclipse.passage.lbc.fls.seal/META-INF/MANIFEST.MF"
+								target="_blank">FLS Seal</a> plug-in as it represents the
+							product on the bundles level:
+						<pre class="code sh_properties">Provide-Capability: licensing.feature;licensing.feature="org.eclipse.passage.lbc.fls.product";name="Eclipse Passage Floating License Server";version="2.0.0";provider="Eclispe Passage";level="warn"</pre>
+						</p>
+						<p>
+							The requirement is declared with <span class="sample">warn</span>
+							<span class="term">restriction level</span>, which precisely
+							means <span class="sample">if there is no license, expose
+								warning to a user</span>. This work is to be done by the development as
+							well.
+						</p>
+						<p>
+							Development guarantees, that the core <span class="term">feature</span>
+							identifier is precisely equal to the <span class="sample">product
+								identifier</span>, which is our case can be found in <a
+								href="https://github.com/eclipse-passage/passage/blob/master/products/org.eclipse.passage.lbc.fls.product/org.eclipse.passage.lbc.fls.product"
+								target="_blank">FLS product declaration</a>.
+						</p>
+					</li>
+					<li><span class="term">Licensing requirements</span> for the
+						base feature <span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
+						is declared in <a
+						href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/META-INF/MANIFEST.MF"
+						target="_blank">LBC Base</a> bundle: there is no API exposed by
+						LBC component, thus <span class="term">licensing
+							requirement</span> for a feature must reside close to its implementation
+						as a part of the <span class="term">feature</span> contract. <span
+						class="note">Location of the requirements described here
+							are recommended as a part of approved methodology, but not
+							required. <span class="term">Passage Access Cycle</span> will
+							find your <span class="term">licensing requirement</span> in any
+							runtime available bundle.
+					</span></li>
+					<li><p>
+							<span class="term">Licensing requirements</span> for the premium
+							feature <span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
+							declared next to its basic version.
+						</p>
+						<p>
+							But unlike it, this one is exposed under <span class="sample">error</span>
+							<span class="term">restriction level</span> as it's not supposed
+							to be used if not licensed.
+						</p></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="row statement">
+			<div class="step-name col-sm-4"></div>
+			<div class="step-explanation col-sm-8"></div>
+
+		</div>
+		<div class="row impl">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-8"></div>
+		</div>
+
+
+
+
+		<div class="row statement">
+			<div class="step-name col-sm-4"></div>
+			<div class="step-explanation col-sm-8"></div>
+
+		</div>
+		<div class="row impl">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-8"></div>
+		</div>
+
+	</div>
+
+
+	<div class="refs">
+		<div class="copyright">&copy; Copyright 2018 - 2021 ArSysOp</div>
+		<div class="ref-entry">
+			<a href="https://fonts.google.com/specimen/Quicksand?query=Quicksand"
+				target="_blank">Quicksand</a> and <a
+				href="https://fonts.google.com/specimen/Open+Sans?query=Montserrat"
+				target="_blank">Montserrat</a> fonts are used.
+		</div>
+		<div class="ref-entry">
+			<a href="http://shjs.sourceforge.net/" target="_blank">SHJS</a> is
+			used to highlight syntaxes.
+		</div>
+	</div>
+</body>
+</html>
