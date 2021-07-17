@@ -1,58 +1,18 @@
 body {
 	font-family: Quicksand, sans-serif;
-	color: #540D6E;
+	color: #57467B;
 	width: 100%;
 }
 
-ul {
+.dev-doc ul {
 	list-style-type: none;
 	padding-left: 0;
 }
 
-ul li:before {
-	content: ' \27a4  ';
+.dev-doc ul li:before {
+	content: ' \273b  ';
 }
 
-a:link {
-	color: #BB0A21;
-}
-
-a:hover {
-	color: #E83151;
-	text-decoration: underline;
-	font-weight: 700;
-}
-
-a:visited {
-	color: #387780;
-	text-decoration: none;
-	font-weight: 600;
-}
-
-span.term {
-	color: #576490;
-	font-weight: 600;
-}
-
-span.sample {
-	font-style: italic;
-}
-
-.row {
-	padding-right: 5%;
-	padding-left: 5%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-
-.note {
-	font-size: smaller;
-	color: #757780;
-}
-
-.emphasis {
-	font-style: italic;
-}
 
 img.built-in {
 	display: block;
@@ -83,50 +43,3 @@ table.tasks td.solution {
 	font-size: 80%;
 }
 
-.refs {
-	margin-top: 30px;
-	border-top: 1px solid lightgray;
-	padding: 20px;
-}
-
-.ref-entry {
-	display: inline-block;
-	font-size: 70%;
-}
-
-.copyright {
-	display: block;
-}
-
-.statement {
-	background-color: #E3E8DF;
-}
-
-.impl {
-	background-color: #F7E7E3;
-}
-
-.impl .brief {
-	font-size: 90%;
-	border-right: 1px solid #757780;
-}
-
-.step-name {
-	font-family: Montserrat, sans-serif;
-	font-size: 120%;
-}
-
-.separator {
-	background-color: #540D6E;
-	padding: 1px 0;
-}
-
-.code {
-	margin: 15px 0;
-}
-
-.role {
-	background-color: #E572A0;
-	padding-left: 5px;
-	padding-right: 5px;
-}

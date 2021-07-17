@@ -2,6 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<link rel="icon" href="i/common/glyph.png">
 <title>Example: Floating License Server</title>
 <script type="text/javascript" src="js/sh_main.min.js"
 	language="JavaScript"></script>
@@ -13,34 +18,89 @@
 	language="JavaScript"></script>
 <link href="css/sh_whitengrey.min.css" rel="stylesheet" type="text/css"
 	media="all" />
-<link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap"
 	rel="stylesheet">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/docs.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bl.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/examples.css" rel="stylesheet" type="text/css"
+	media="all" />
 
 </head>
-<body onload="sh_highlightDocument();">
-	<div class="titling">
-		<p>
-			<a
-				href="https://download.eclipse.org/passage/downloads/release/2.0.1/fls/">Eclipse
-				Passage Floating License Server</a> is itself a product <a
-				href="dev-guide.html">licensed with Passage</a>.
-		</p>
-		<p>Let's examine which steps it took to get protected with
-			license.</p>
-	</div>
-	<div class="container-fliud">
-		<div class="row separator">
-			<div class="col-sm-12"></div>
-		</div>
-		<div class="row statement">
-			<div class="step-name col-sm-3">
-				Step 1: declare <span class="term">licensing requirements</span>
+<body onload="sh_highlightDocument();" class="dev-doc">
+
+	<div class="navigation container-fluid">
+		<div class="row header">
+			<div class="col-sm nav-ref home">
+				<a class="anchor" href="index.html">Home</a>
 			</div>
-			<div class="step-explanation col-sm-9">
+			<div class="col-sm nav-ref features">
+				<a class="anchor" href="index.html#features">Features</a>
+			</div>
+			<div class="col-sm nav-ref products">
+				<a class="anchor" href="index.html#products">Products</a>
+			</div>
+			<div class="col-sm nav-ref examples">
+				<a class="anchor" href="index.html#examples">Examples</a>
+			</div>
+			<div class="col-sm nav-ref documentation">
+				<a class="anchor" href="index.html#docs">Documentation</a>
+			</div>
+			<div class="col-sm nav-ref components">
+				<a class="anchor" href="index.html#components">Components</a>
+			</div>
+			<div class="col-sm nav-ref support">
+				<a class="anchor" href="index.html#support">Support</a>
+			</div>
+			<div class="col-sm nav-ref services">
+				<a class="anchor" href="index.html#services">Services</a>
+			</div>
+			<div class="col-sm nav-ref contact">
+				<a class="anchor" href="index.html#contact">Contact</a>
+			</div>
+			<div class="col-sm nav-ref contribute">
+				<a class="anchor" href="index.html#contribute">Contribute</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="titling container-fluid">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm">
+				<img src="i/common/glyph.png" width="256">
+			</div>
+			<div class="col-sm">
+				<div class="titling-brief">
+					<p>
+						<a
+							href="https://download.eclipse.org/passage/downloads/release/2.0.1/fls/">Eclipse
+							Passage Floating License Server</a><br />is itself a product <a
+							href="dev-guide.html"><br />licensed with Passage</a>.
+					</p>
+					<p>
+						Let's examine which steps it took<br />to get protected with
+						license.
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	</div>
+
+
+	<div class="separable examples info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">
+					Step 1: declare <span class="term">licensing requirements</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="step-explanation col-sm-12">
 				<p>
 					FLS <span class="role">architects</span> defined three <span
 						class="term">feature</span>s for this product, meaning these three
@@ -69,12 +129,19 @@
 			</div>
 
 		</div>
-		<div class="row impl">
-			<div class="brief col-sm-3">
-				Thus, <span class="role">developer</span> declares <span
-					class="term">licensing requirements</span> for these three features
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="step-actions col-sm-6">
+				<p>
+					Thus, <span class="role">developer</span> declares <span
+						class="term">licensing requirements</span> for these three <span
+						class="term">feature</span>s.
+				</p>
 			</div>
-			<div class="col-sm-9">
+			<div class="col-sm-3"></div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-12">
 				<ul>
 					<li>
 						<p>
@@ -110,12 +177,15 @@
 							LBC component, thus <span class="term">licensing
 								requirement</span> for a feature must reside close to its
 							implementation as a part of the <span class="term">feature</span>
-							contract. <span class="note">Location of the requirements
-								described here are recommended as a part of approved
-								methodology, but not required. <span class="term">Passage
-									Access Cycle</span> will find your <span class="term">licensing
-									requirement</span> in any runtime available bundle.
-							</span>
+							contract.
+
+						</p>
+						<p class="note">
+							Location of the requirements described here is recommended as a
+							part of approved methodology, but not required. <span
+								class="term">Passage Access Cycle</span> will find your <span
+								class="term">licensing requirement</span> in any runtime
+							available bundle.
 						</p></li>
 					<li><p>
 							<span class="term">Licensing requirements</span> for the premium
@@ -130,14 +200,15 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row separator">
-			<div class="col-sm-12"></div>
-		</div>
-		<div class="row statement">
-			<div class="step-name col-sm-3">
+	</div>
+	<div class="separable examples info-section container">
+		<div class="row ">
+			<div class="step-name section-header col-sm-12">
 				Step 2: employ <span class="term">Passage Access Cycle</span>
 			</div>
-			<div class="step-explanation col-sm-9">
+		</div>
+		<div class="row ">
+			<div class="step-explanation col-sm-12">
 				<p>
 					<span class="term">Access Cycle</span> is the part of Passage that
 					runs together with your product and empowers licensing protection
@@ -160,10 +231,10 @@
 					</li>
 				</ul>
 			</div>
-
 		</div>
-		<div class="row impl">
-			<div class="brief col-sm-3">
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="step-actions col-sm-6">
 				<p>
 					As FLS is itself <span class="sample">for Passage and on
 						Passage</span> product, it gains the vital dependency with the rest of
@@ -175,7 +246,10 @@
 					bundle, methodologically called <span class="term">seal</span>.
 				</p>
 			</div>
-			<div class="col-sm-9">
+			<div class="col-sm-3"></div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-12">
 				<p>
 					To configure <span class="term">Access Cycle</span> a <span
 						class="role">developer</span> must supply instance of <a
@@ -214,42 +288,122 @@
 				</p>
 			</div>
 		</div>
-		<div class="row separator">
-			<div class="col-sm-12"></div>
+	</div>
+	<div class="separable examples info-section container">
+		<div class="row">
+			<div class="step-name section-header col-sm-12">Step 3: implant
+				license checks</div>
 		</div>
-		<div class="row statement">
-			<div class="step-name col-sm-3">Step 3: implant license checks</div>
-			<div class="step-explanation col-sm-9">
+		<div class="row">
+			<div class="step-explanation col-sm-12">
 				<p>
-					A product <span class="role">developer</span> appeals to <span class="term">Access
-						Cycle</span> by means of <span class="term">Passage Lic API</span> to cover
-					each of the <span class="term">feature</span>s implementation with
-					licensing protection.
+					A product <span class="role">developer</span> appeals to <span
+						class="term">Access Cycle</span> by means of <span class="term">Passage
+						Lic API</span> to cover each of the <span class="term">feature</span>s
+					implementation with licensing protection.
 				</p>
 			</div>
 
 		</div>
-		<div class="row impl">
-			<div class="brief col-sm-3">
-			FLVS checks license </div>
-			<div class="col-sm-9"></div>
+		<div class="row ">
+			<div class="col-sm-3"></div>
+			<div class="step-actions col-sm-6">
+				<p>
+					FLS checks license coverage when each of the <span class="term">feature</span>s,
+					declared to licensing protection, is going to be executed.
+				</p>
+			</div>
+			<div class="col-sm-3"></div>
 		</div>
+		<div class="row">
+			<div class="step-impl col-sm-12">
+				<ul>
+					<li><p>
+							The first feature, <span class="sample">org.eclipse.passage.lbc.fls.product</span>,
+							as it denotes the product core <span class="term">feature</span>,
+							is checked for license coverage each time the server starts up.
+						</p>
+						<p>
+							Have a closer loot at <a
+								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jetty/src/org/eclipse/passage/lic/internal/jetty/interaction/LicenseProtection.java"
+								target="_blank">LicenseProtection</a> class that implements the
+							check.
+						</p>
+						<p>
+							It has two pairing methods: <br /> <span class="sample">check</span>,
+							which gets a licensing grant for the <span class="term">feature</span>
+							and report <span class="samepl">failed check</span> if none is
+							granted, and<br /> <span class="sample">release</span>, which
+							returns the grant, it it has indeed been acquired.
+						</p>
+						<p>
+							Correspondingly, <br /> <span class="sample">check</span> <a
+								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jetty/src/org/eclipse/passage/lic/internal/jetty/interaction/ServerHandles.java"
+								target="_blank">is called</a> by <span class="sample">start
+								server</span> command and <br /> <span class="sample">release</span>
+							is triggered on <span class="sample">server stop</span>.
+						</p></li>
+					<li><p>
+							The basic <span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
+							<span class="term">feature</span> is checked when the
+							corresponding functionality is invoked: when FLS a client tries
+							to <a
+								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/AcquiredGrantsStorage.java"
+								target="_blank">acquire</a> a grant for a product feature under
+							FLS responsibility.
+						</p></li>
+					<li><p>
+							And the premium <span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
+							<span class="term">feature</span> is checked when the basic
+							functionality is not enough.
+						</p>
+						<p>
+							Look how <a
+								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/ProtectedGrantCapacity.java"
+								target="_blank">ProtectedGrantCapacity</a>, which checks if the
+							premium grant acquisition is properly licensed, is exploited by <a
+								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/AcquiredGrantsStorage.java"
+								target="_blank"> AcquiredGrantsStorage</a>, which, in turn, is
+							responsible for the grant acquisition in general.
+						</p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
-	</div>
-	<div class="row separator">
-		<div class="col-sm-12"></div>
-	</div>
-	<div class="refs">
-		<div class="copyright">&copy; Copyright 2018 - 2021 ArSysOp</div>
-		<div class="ref-entry">
-			<a href="https://fonts.google.com/specimen/Quicksand?query=Quicksand"
-				target="_blank">Quicksand</a> and <a
-				href="https://fonts.google.com/specimen/Open+Sans?query=Montserrat"
-				target="_blank">Montserrat</a> fonts are used.
+	<div class="footer legal container-fluid">
+		<div class="row">
+			<div class="col-sm-8">
+				<div>&copy; Copyright 2018 - 2021 ArSysOp</div>
+			</div>
+			<div class="col-sm">
+				<a href="https://projects.eclipse.org/projects/technology.passage"
+					target="_blank">About</a>
+			</div>
+			<div class="col-sm">
+				<a href="https://spdx.org/licenses/EPL-2.0.html" target="_blank">Terms
+					of use</a>
+			</div>
 		</div>
-		<div class="ref-entry">
-			<a href="http://shjs.sourceforge.net/" target="_blank">SHJS</a> is
-			used to highlight syntaxes.
+	</div>
+	<div class="footer refs container-fluid">
+		<div class="row">
+			<div class="col-sm-6"></div>
+			<div class="col-sm">
+				Site is constructed with <a
+					href="https://github.com/twbs/bootstrap/">Bootstrap</a>.
+			</div>
+			<div class="col-sm">
+				<a
+					href="https://fonts.google.com/specimen/Quicksand?query=Quicksand"
+					target="_blank">Quicksand</a> and <a
+					href="https://fonts.google.com/specimen/Open+Sans?query=Montserrat"
+					target="_blank">Montserrat</a> fonts are used.
+			</div>
+			<div class="col-sm">
+				<a href="http://shjs.sourceforge.net/" taregt="_blank">SHJS</a> is
+				used to highlight syntaxes.
+			</div>
 		</div>
 	</div>
 </body>

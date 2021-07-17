@@ -1,0 +1,36 @@
+p {
+	margin: 10px 0;
+}
+
+ul{
+	list-style-position: inside;
+}
+
+.examples {
+	text-align: left;
+}
+
+.step-name {
+	text-align: center;
+}
+
+.examples .row {
+	padding: 0 40px;
+}
+
+.step-actions {
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: inherit;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: inherit;
+}
+
+.step-impl ul li p{
+	padding-left: 50px;
+}
+
+.examples:last-child {
+	border-bottom: none;
+}

@@ -1,0 +1,23 @@
+.role {
+	background-color: #7EBDC2;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.term {
+	color: #576490;
+	font-weight: 600;
+}
+
+.sample {
+	font-style: italic;
+}
+
+.note {
+	font-size: smaller;
+	color: #757780;
+}
+
+.emphasis {
+	font-style: italic;
+}
