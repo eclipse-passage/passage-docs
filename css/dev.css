@@ -2,7 +2,7 @@ p {
 	margin: 10px 0;
 }
 
-ul{
+ul {
 	list-style-position: inside;
 }
 
@@ -14,23 +14,33 @@ ul{
 	text-align: center;
 }
 
-.examples .row {
+.info-section  .row {
 	padding: 0 40px;
 }
 
 .step-actions {
 	border-top-width: 2px;
 	border-top-style: solid;
-	border-top-color: inherit;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
-	border-bottom-color: inherit;
+	border-color: inherit;
 }
 
-.step-impl ul li p{
+.step-impl {
+	border-color: inherit;
+}
+
+.step-impl ul li p {
 	padding-left: 50px;
 }
 
-.examples:last-child {
-	border-bottom: none;
+.step-impl-phase:before {
+	content: ' \273b  ';
+}
+
+.task-solution {
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-color: inherit;
+	margin-bottom: 15px;
 }

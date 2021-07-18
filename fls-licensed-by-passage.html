@@ -24,8 +24,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bl.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/examples.css" rel="stylesheet" type="text/css"
-	media="all" />
+<link href="css/dev.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body onload="sh_highlightDocument();" class="dev-doc">
@@ -142,62 +141,61 @@
 		</div>
 		<div class="row">
 			<div class="step-impl col-sm-12">
-				<ul>
-					<li>
-						<p>
-							<span class="term">Licensing requirements</span> for the core
-							product feature <span class="sample">org.eclipse.passage.lbc.fls.product</span>
-							is declared in <a
-								href="https://github.com/eclipse-passage/passage/tree/master/bundles/org.eclipse.passage.lbc.fls.seal/META-INF/MANIFEST.MF"
-								target="_blank">FLS Seal</a> plug-in as it represents the
-							product on the bundles level:
-						<pre class="code sh_properties">Provide-Capability: licensing.feature;licensing.feature="org.eclipse.passage.lbc.fls.product";name="Eclipse Passage Floating License Server";version="2.0.0";provider="Eclispe Passage";level="warn"</pre>
-						</p>
-						<p>
-							The requirement is declared with <span class="sample">warn</span>
-							<span class="term">restriction level</span>, which precisely
-							means <span class="sample">if there is no license, expose
-								warning to a user</span>. This work is to be done by the development as
-							well.
-						</p>
-						<p>
-							Development guarantees, that the core <span class="term">feature</span>
-							identifier is precisely equal to the <span class="sample">product
-								identifier</span>, which is our case can be found in <a
-								href="https://github.com/eclipse-passage/passage/blob/master/products/org.eclipse.passage.lbc.fls.product/org.eclipse.passage.lbc.fls.product"
-								target="_blank">FLS product declaration</a>.
-						</p>
-					</li>
-					<li><p>
-							<span class="term">Licensing requirements</span> for the base
-							feature <span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
-							is declared in <a
-								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/META-INF/MANIFEST.MF"
-								target="_blank">LBC Base</a> bundle: there is no API exposed by
-							LBC component, thus <span class="term">licensing
-								requirement</span> for a feature must reside close to its
-							implementation as a part of the <span class="term">feature</span>
-							contract.
+				<div class="step-impl-phase">
+					<p>
+						<span class="term">Licensing requirements</span> for the core
+						product feature <span class="sample">org.eclipse.passage.lbc.fls.product</span>
+						is declared in <a
+							href="https://github.com/eclipse-passage/passage/tree/master/bundles/org.eclipse.passage.lbc.fls.seal/META-INF/MANIFEST.MF"
+							target="_blank">FLS Seal</a> plug-in as it represents the product
+						on the bundles level:
+					<pre class="code sh_properties">Provide-Capability: licensing.feature;licensing.feature="org.eclipse.passage.lbc.fls.product";name="Eclipse Passage Floating License Server";version="2.0.0";provider="Eclispe Passage";level="warn"</pre>
+					</p>
+					<p>
+						The requirement is declared with <span class="sample">warn</span>
+						<span class="term">restriction level</span>, which precisely means
+						<span class="sample">if there is no license, expose warning
+							to a user</span>. This work is to be done by the development as well.
+					</p>
+					<p>
+						Development guarantees, that the core <span class="term">feature</span>
+						identifier is precisely equal to the <span class="sample">product
+							identifier</span>, which is our case can be found in <a
+							href="https://github.com/eclipse-passage/passage/blob/master/products/org.eclipse.passage.lbc.fls.product/org.eclipse.passage.lbc.fls.product"
+							target="_blank">FLS product declaration</a>.
+					</p>
+				</div>
+				<div class="step-impl-phase">
+					<p>
+						<span class="term">Licensing requirements</span> for the base
+						feature <span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
+						is declared in <a
+							href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/META-INF/MANIFEST.MF"
+							target="_blank">LBC Base</a> bundle: there is no API exposed by
+						LBC component, thus <span class="term">licensing
+							requirement</span> for a feature must reside close to its implementation
+						as a part of the <span class="term">feature</span> contract.
 
-						</p>
-						<p class="note">
-							Location of the requirements described here is recommended as a
-							part of approved methodology, but not required. <span
-								class="term">Passage Access Cycle</span> will find your <span
-								class="term">licensing requirement</span> in any runtime
-							available bundle.
-						</p></li>
-					<li><p>
-							<span class="term">Licensing requirements</span> for the premium
-							feature <span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
-							declared next to its basic version.
-						</p>
-						<p>
-							But unlike it, this one is exposed under <span class="sample">error</span>
-							<span class="term">restriction level</span> as it's not supposed
-							to be used if not licensed.
-						</p></li>
-				</ul>
+					</p>
+					<p class="note">
+						Location of the requirements described here is recommended as a
+						part of approved methodology, but not required. <span class="term">Passage
+							Access Cycle</span> will find your <span class="term">licensing
+							requirement</span> in any runtime available bundle.
+					</p>
+				</div>
+				<div class="step-impl-phase">
+					<p>
+						<span class="term">Licensing requirements</span> for the premium
+						feature <span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
+						declared next to its basic version.
+					</p>
+					<p>
+						But unlike it, this one is exposed under <span class="sample">error</span>
+						<span class="term">restriction level</span> as it's not supposed
+						to be used if not licensed.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -317,56 +315,60 @@
 		</div>
 		<div class="row">
 			<div class="step-impl col-sm-12">
-				<ul>
-					<li><p>
-							The first feature, <span class="sample">org.eclipse.passage.lbc.fls.product</span>,
-							as it denotes the product core <span class="term">feature</span>,
-							is checked for license coverage each time the server starts up.
-						</p>
-						<p>
-							Have a closer loot at <a
-								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jetty/src/org/eclipse/passage/lic/internal/jetty/interaction/LicenseProtection.java"
-								target="_blank">LicenseProtection</a> class that implements the
-							check.
-						</p>
-						<p>
-							It has two pairing methods: <br /> <span class="sample">check</span>,
-							which gets a licensing grant for the <span class="term">feature</span>
-							and report <span class="samepl">failed check</span> if none is
-							granted, and<br /> <span class="sample">release</span>, which
-							returns the grant, it it has indeed been acquired.
-						</p>
-						<p>
-							Correspondingly, <br /> <span class="sample">check</span> <a
-								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jetty/src/org/eclipse/passage/lic/internal/jetty/interaction/ServerHandles.java"
-								target="_blank">is called</a> by <span class="sample">start
-								server</span> command and <br /> <span class="sample">release</span>
-							is triggered on <span class="sample">server stop</span>.
-						</p></li>
-					<li><p>
-							The basic <span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
-							<span class="term">feature</span> is checked when the
-							corresponding functionality is invoked: when FLS a client tries
-							to <a
-								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/AcquiredGrantsStorage.java"
-								target="_blank">acquire</a> a grant for a product feature under
-							FLS responsibility.
-						</p></li>
-					<li><p>
-							And the premium <span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
-							<span class="term">feature</span> is checked when the basic
-							functionality is not enough.
-						</p>
-						<p>
-							Look how <a
-								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/ProtectedGrantCapacity.java"
-								target="_blank">ProtectedGrantCapacity</a>, which checks if the
-							premium grant acquisition is properly licensed, is exploited by <a
-								href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/AcquiredGrantsStorage.java"
-								target="_blank"> AcquiredGrantsStorage</a>, which, in turn, is
-							responsible for the grant acquisition in general.
-						</p></li>
-				</ul>
+				<div class="step-impl-phase">
+					<p>
+						The first feature, <span class="sample">org.eclipse.passage.lbc.fls.product</span>,
+						as it denotes the product core <span class="term">feature</span>,
+						is checked for license coverage each time the server starts up.
+					</p>
+					<p>
+						Have a closer loot at <a
+							href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jetty/src/org/eclipse/passage/lic/internal/jetty/interaction/LicenseProtection.java"
+							target="_blank">LicenseProtection</a> class that implements the
+						check.
+					</p>
+					<p>
+						It has two pairing methods: <br /> <span class="sample">check</span>,
+						which gets a licensing grant for the <span class="term">feature</span>
+						and report <span class="samepl">failed check</span> if none is
+						granted, and<br /> <span class="sample">release</span>, which
+						returns the grant, it it has indeed been acquired.
+					</p>
+					<p>
+						Correspondingly, <br /> <span class="sample">check</span> <a
+							href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lic.jetty/src/org/eclipse/passage/lic/internal/jetty/interaction/ServerHandles.java"
+							target="_blank">is called</a> by <span class="sample">start
+							server</span> command and <br /> <span class="sample">release</span> is
+						triggered on <span class="sample">server stop</span>.
+					</p>
+				</div>
+				<div class="step-impl-phase">
+					<p>
+						The basic <span class="sample">org.eclipse.passage.lbc.acquire.concurrent</span>
+						<span class="term">feature</span> is checked when the
+						corresponding functionality is invoked: when FLS a client tries to
+						<a
+							href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/AcquiredGrantsStorage.java"
+							target="_blank">acquire</a> a grant for a product feature under
+						FLS responsibility.
+					</p>
+				</div>
+				<div class="step-impl-phase">
+					<p>
+						And the premium <span class="sample">org.eclipse.passage.lbc.acquire.concurrent.full</span>
+						<span class="term">feature</span> is checked when the basic
+						functionality is not enough.
+					</p>
+					<p>
+						Look how <a
+							href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/ProtectedGrantCapacity.java"
+							target="_blank">ProtectedGrantCapacity</a>, which checks if the
+						premium grant acquisition is properly licensed, is exploited by <a
+							href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.lbc.base/src/org/eclipse/passage/lbc/internal/base/acquire/AcquiredGrantsStorage.java"
+							target="_blank"> AcquiredGrantsStorage</a>, which, in turn, is
+						responsible for the grant acquisition in general.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
