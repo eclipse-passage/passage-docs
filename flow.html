@@ -2,23 +2,101 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Passage Developer's guide</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<link rel="icon" href="i/common/glyph.png">
+<title>Passage Licensing Flow</title>
 <link
 	href="https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap"
 	rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/bl.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/dev.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/documentation.css" rel="stylesheet" type="text/css"
+	media="all" />
+
 </head>
-<body>
-	<div>
-		<p>Passage puts you product and/or it's features under license
-			protection.</p>
-		<p>To make it do so you should take several steps.</p>
+<body class="dev-doc">
+	<div class="navigation container-fluid">
+		<div class="row header">
+			<div class="col-sm nav-ref home">
+				<a class="anchor" href="index.html">Home</a>
+			</div>
+			<div class="col-sm nav-ref features">
+				<a class="anchor" href="index.html#features">Features</a>
+			</div>
+			<div class="col-sm nav-ref products">
+				<a class="anchor" href="index.html#products">Products</a>
+			</div>
+			<div class="col-sm nav-ref examples">
+				<a class="anchor" href="index.html#examples">Examples</a>
+			</div>
+			<div class="col-sm nav-ref documentation">
+				<a class="anchor" href="index.html#docs">Documentation</a>
+			</div>
+			<div class="col-sm nav-ref components">
+				<a class="anchor" href="index.html#components">Components</a>
+			</div>
+			<div class="col-sm nav-ref support">
+				<a class="anchor" href="index.html#support">Support</a>
+			</div>
+			<div class="col-sm nav-ref services">
+				<a class="anchor" href="index.html#services">Services</a>
+			</div>
+			<div class="col-sm nav-ref contact">
+				<a class="anchor" href="index.html#contact">Contact</a>
+			</div>
+			<div class="col-sm nav-ref contribute">
+				<a class="anchor" href="index.html#contribute">Contribute</a>
+			</div>
+		</div>
 	</div>
-	<div>
-		<ul>
-			<li><p>
-					Done by <a href="dev-guide.html">product development</a>:
-				</p>
+
+
+	<div class="titling container-fluid">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm">
+				<img src="i/common/glyph.png" width="256">
+			</div>
+			<div class="col-sm">
+				<div class="titling-brief">
+					<p>
+						Eclipse Passage<br /> Licensing Flow
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	</div>
+
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">
+					<p>Passage puts you product and/or it's features under license
+						protection.</p>
+					<p>To make it do so you should take several steps.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">
+					<p>
+						Done by <a href="dev-guide.html" target="_blank">product
+							development</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<ul>
 					<li>declare what in the product is protected by license (it
 						can be the whole product or/and some particular features);</li>
@@ -27,43 +105,111 @@
 					<li>configure Passage Access Cycle for your particular needs
 						or clone one of the existing configurations.</li>
 				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<p>From this point the product is treated as protected by
 					Passage.</p>
 				<p>Now we need to issue a license for our product to make
-					Passage let ua user to use the product. This is done with two
-					steps.</p></li>
+					Passage let a user to use the product. This is done with two steps.</p>
+			</div>
+		</div>
+	</div>
 
-			<li>
-				<p>Done by product management: create licensing metadata for the
-					product</p>
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">
+					<p>Done by product management: create licensing metadata for
+						the product</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<ul>
 					<li>define product, features and their versions under
 						licensing protection,</li>
 					<li>generate encryption keys,</li>
 					<li>create license plan</li>
 				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<p>These step begets several artifacts (now xmi files) that are
 					quite precious and should be kept with care.</p>
-			</li>
+			</div>
+		</div>
+	</div>
 
-			<li><p>Done by sales management:</p>
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">
+					<p>Done by sales management</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<p>license issuing boils down to a simple wizard passing which
-					ends up by a pack of license files storing on a file system.</p></li>
-			<li>
-				<p>Done by doc team:</p>
+					ends up by a pack of license files storing on a file system.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">
+					<p>Done by doc team</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm">
 				<p>This step is to be performed by the product's user, but
 					should definitely be documented: when a user gets your product and
 					a license, how they should apply the license to the product.</p>
-			</li>
-		</ul>
+			</div>
+		</div>
 	</div>
 
-
-	<div class="refs">
-		<div class="copyright">&copy; Copyright 2018 - 2021 ArSysOp</div>
-		<div class="ref-entry">
-			<a href="https://fonts.google.com/specimen/Quicksand?query=Quicksand"
-				target="_blank">Quicksand</a> font is used.
+	<div class="footer legal container-fluid">
+		<div class="row">
+			<div class="col-sm-8">
+				<div>&copy; Copyright 2018 - 2021 ArSysOp</div>
+			</div>
+			<div class="col-sm">
+				<a href="https://projects.eclipse.org/projects/technology.passage"
+					target="_blank">About</a>
+			</div>
+			<div class="col-sm">
+				<a href="https://spdx.org/licenses/EPL-2.0.html" target="_blank">Terms
+					of use</a>
+			</div>
+		</div>
+	</div>
+	<div class="footer refs container-fluid">
+		<div class="row">
+			<div class="col-sm-6"></div>
+			<div class="col-sm">
+				Site is constructed with <a
+					href="https://github.com/twbs/bootstrap/">Bootstrap</a>.
+			</div>
+			<div class="col-sm">
+				<a
+					href="https://fonts.google.com/specimen/Quicksand?query=Quicksand"
+					target="_blank">Quicksand</a> and <a
+					href="https://fonts.google.com/specimen/Open+Sans?query=Montserrat"
+					target="_blank">Montserrat</a> fonts are used.
+			</div>
+			<div class="col-sm">
+				<a href="http://shjs.sourceforge.net/" taregt="_blank">SHJS</a> is
+				used to highlight syntaxes.
+			</div>
 		</div>
 	</div>
 </body>
