@@ -117,8 +117,9 @@
 		<div class="row">
 			<div class="step-impl col-sm-12">
 				<p>
-					Main product licensing feature <span class="sample">org.eclipse.passage.loc.operator.product</span>
-					is declared for protection in the <a
+					Main product licensing <span class="term">feature</span> <span
+						class="sample">org.eclipse.passage.loc.operator.product</span> is
+					declared for protection in the <a
 						href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator/META-INF/MANIFEST.MF"
 						target="_blank">branding plug-in</a>.
 				</p>
@@ -134,6 +135,56 @@
 						href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.api/META-INF/MANIFEST.MF"
 						target="_blank">Operator API</a> plug-in as a part of API
 					contract.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="separable examples info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">Forbid unlicensed launching of the
+					product</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="step-explanation col-sm-12">
+				<p>The most common task is to stop product launching if it is
+					not licensed properly.</p>
+				<p>
+					Operator itself allows unlicensed launching (declares <span
+						class="sample">org.eclipse.passage.loc.operator.product</span> <span
+						class="term">feature</span> with <span class="term">warn</span> <span
+						class="term">restriction level</span>), but pauses execution and
+					draws user's attention to the fact of license absence.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3"></div>
+			<div class="step-actions col-sm-6">
+				<p>
+					<span class="emphasis">E4LicensingAddon</span> is the key actor
+					which is invoked on the workbench startup and prevents unlicensed
+					launching.
+				</p>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-12">
+				<p>
+					To employ <span class="emphasis">E4LicensingAddon</span> on your
+					product startup you should plug it as an add-on to your workbench
+					model application. You can do so, for example, by declaring <span
+						class="term">extension</span> for <span class="sample">org.eclipse.e4.workbench.model</span>
+					point.
+				</p>
+				<p>
+					Passage Operator <a
+						href="https://github.com/eclipse-passage/passage/blob/master/bundles/org.eclipse.passage.loc.operator/plugin.xml"
+						target="_blank">declares</a> such an extension in its branding
+					plug-in.
 				</p>
 			</div>
 		</div>
@@ -199,25 +250,6 @@
 					<span class="term">restriction level</span>).
 				</p>
 			</div>
-		</div>
-	</div>
-
-	<div class="separable examples info-section container">
-		<div class="row">
-			<div class="step-name col-sm">
-				<div class="section-header"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="step-explanation col-sm-12"></div>
-		</div>
-		<div class="row">
-			<div class="col-sm-3"></div>
-			<div class="step-actions col-sm-6"></div>
-			<div class="col-sm-3"></div>
-		</div>
-		<div class="row">
-			<div class="step-impl col-sm-12"></div>
 		</div>
 	</div>
 
