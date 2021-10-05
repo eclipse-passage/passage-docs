@@ -80,7 +80,7 @@
 	<div class="separable documentation info-section container">
 		<div class="row">
 			<div class="step-name col-sm">
-				<div class="section-header">Requirement gathering</div>
+				<div class="section-header">Requirements gathering</div>
 			</div>
 		</div>
 		<div class="row">
@@ -93,8 +93,8 @@
 			</div>
 			<div class="step-impl col-sm-2">
 				<p>
-					<span class="term">Requirements</span> are supplied by the
-					product under licensing.
+					<span class="term">Requirements</span> are supplied by the product
+					under licensing.
 				</p>
 			</div>
 			<div class="step-impl col-sm-7">
@@ -108,14 +108,58 @@
 					for <span class="term">Access Cycle</span> by its configuration.
 				</p>
 				<p>
-					Thus, to supply <span class="term">requirements</span> of your own source,
-					just implement the interface and mention it in <span class="term">Access
-						Cycle Configuration</span>.
+					Thus, to supply <span class="term">requirements</span> of your own
+					source, just implement the interface and mention it in <span
+						class="term">Access Cycle Configuration</span>.
 				</p>
 			</div>
 		</div>
 	</div>
 
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">Grants mining</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-3">
+				<p>
+					<span class="term">Grant</span> - particle of a license that states
+					<span class="sample">this feature can be used if this <span
+						class="term">condition</span> is fulfilled
+					</span>.
+				</p>
+				<p>
+					<span class="term">Condition</span> - formalized demand for runtime
+					environment or user data, like <span class="sample">hwdisk.serial='123456YU'</span>
+					or <span class="sample">location='greece'</span> or <span class="sample">root.name='SecurityTools'</span>.
+			</div>
+			<div class="step-impl col-sm-2">
+				<p>
+					<span class="term">Grants</span> are supplied by a product license.
+				</p>
+			</div>
+			<div class="step-impl col-sm-7">
+				<p>
+					<span class="term">Access Cycle</span> <span class="term">mines
+						grants</span> with the dedicated <span class="emphasis">mining</span>
+					interface.
+				</p>
+				<p>
+					There can be many miners registered at the product runtime; <span
+						class="term">Access Cycle Configuration</span> is responsible for
+					conveying them to <span class="term">Access Cycle</span>.
+				</p>
+				<p>
+					Thus, to support some new type of <span class="term">condition</span>
+					you should implement several connected interfaces and supply them
+					to <span class="term">Access Cycle</span> through its
+					configuration.
+				</p>
+			</div>
+		</div>
+	</div>
 
 
 	<div class="footer legal container-fluid">
