@@ -80,7 +80,38 @@
 	<div class="separable documentation info-section container">
 		<div class="row">
 			<div class="step-name col-sm">
-				<div class="section-header">Requirements gathering</div>
+				<div class="section-header">Invocation</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-4">
+				<p>
+					Product appeals to <span class="term">Access Cycle</span> when
+					wants to be sure a <span class="term">feature</span> is not going
+					to be used without proper license coverage.
+				</p>
+			</div>
+			<div class="step-impl col-sm-8">
+				<p>
+					On each such appeal, <span class="term">Access Cycle</span>
+				</p>
+				<ul>
+					<li>reads, how exactly the product wants this feature to be
+						protected</li>
+					<li>looks for available licenses,</li>
+					<li>evaluates, how these licenses fit the runtime and</li>
+					<li>finally checks, if the feature protection demand is
+						covered by a license.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">Requirements gathering: how the
+					product wants to be protected</div>
 			</div>
 		</div>
 		<div class="row">
@@ -119,7 +150,8 @@
 	<div class="separable documentation info-section container">
 		<div class="row">
 			<div class="step-name col-sm">
-				<div class="section-header">Grants mining</div>
+				<div class="section-header">Grants mining: which licenses the
+					user has</div>
 			</div>
 		</div>
 		<div class="row">
@@ -133,7 +165,8 @@
 				<p>
 					<span class="term">Condition</span> - formalized demand for runtime
 					environment or user data, like <span class="sample">hwdisk.serial='123456YU'</span>
-					or <span class="sample">location='greece'</span> or <span class="sample">root.name='SecurityTools'</span>.
+					or <span class="sample">location='greece'</span> or <span
+						class="sample">root.name='SecurityTools'</span>.
 			</div>
 			<div class="step-impl col-sm-2">
 				<p>
@@ -156,6 +189,58 @@
 					you should implement several connected interfaces and supply them
 					to <span class="term">Access Cycle</span> through its
 					configuration.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">Permission emitting: which grants
+					gets their conditions fulfilled</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-3">
+				<p>
+					<span class="term">Permission</span> - runtime unit with short TTL
+					which reads: <span class="sample">for the moment, we are
+						treating this <span class="term">condition</span> as fulfilled and
+						thus this <span class="term">grant</span> allows to use this <span
+						class="term">feature</span>
+					</span>.
+				</p>
+			</div>
+			<div class="step-impl col-sm-3">
+				<p>
+					<span class="term">Permission</span>s are supplied by Access Cycle:
+					it evaluates all the <span class="term">grant's condition</span>s
+					against appropriate runtime environment (for instance <span
+						class="sample">hardware</span> or <span class="sample">user
+						data</span>) to define whether it is fulfilled or not. Each <span
+						class="term">grant</span> with successfully evaluated <span
+						class="term">condition</span> begets a <span class="term">permission</span>
+					for the <span class="term">feature</span> to be used.
+				</p>
+			</div>
+			<div class="step-impl col-sm-6">
+				<p>
+					<span class="term">Access Cycle</span> <span class="term">evaluates
+						condition</span> with the set of interfaces responsible for condition
+					text parsing to tokens, token evaluation against runtime
+					environment, combination of results for all tokens, etc.
+				</p>
+				<p>
+					Lots of <span class="term">condition type</span>s can be supported
+					simultaneously.
+				</p>
+				<p>
+					To add your own type of <span class="term">condition</span> and
+					thereby empower a license to check yet unsupported runtime aspects,
+					you need to cover <span class="term">condition</span> evaluation
+					with necessary interfaces and extend <span class="term">Access
+						Cycle Configuration</span> correspondingly.
 				</p>
 			</div>
 		</div>
