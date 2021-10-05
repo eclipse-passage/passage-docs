@@ -246,6 +246,45 @@
 		</div>
 	</div>
 
+	<div class="separable documentation info-section container">
+		<div class="row">
+			<div class="step-name col-sm">
+				<div class="section-header">Requirements against permissions
+					examining: each requirement must be covered with a permission</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="step-impl col-sm-4">
+				<p>Here product demands (restrictive part) meet licenses
+					(permissive part) to find out whether there are enough permissions
+					for all the demands.</p>
+			</div>
+			<div class="step-impl col-sm-8">
+				<p>
+					<span class="term">Access Cycle</span> checks if the emitted <span
+						class="term">permission</span>s are enough to satisfy all the
+					gathered <span class="term">requirement</span>s by the examination
+					interface.
+				</p>
+				<p>
+					There can be many of them; and if you like to append more
+					restrictive logic to the whole cycle, implement the interface and
+					supply it through <span class="term">Access Cycle
+						Configuration</span>.
+				</p>
+				<p>
+					According to the examination the final decision is made: where the
+					<span class="term">feature</span> can be used or not. <span
+						class="term">examination certificate</span> is leased to convey
+					all the details of the solution. 
+				</p>
+				<p>
+					For successfully examined feature a <span class="term">usage
+						grant</span> can be <span class="term">acquired</span>.
+				</p>
+			</div>
+		</div>
+	</div>
 
 	<div class="footer legal container-fluid">
 		<div class="row">
