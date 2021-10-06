@@ -124,15 +124,16 @@
 			</div>
 			<div class="step-impl col-sm-2">
 				<p>
-					<span class="term">Requirements</span> are supplied by the product
+					<span class="term">Requirement</span>s are supplied by the product
 					under licensing.
 				</p>
 			</div>
 			<div class="step-impl col-sm-7">
 				<p>
-					<span class="term">Access Cycle</span> <span class="term">gathers
-						requirement</span> available at the product runtime by means of an <span
-						class="emphasis">requirement gathering</span> interface.
+					<span class="term">Access Cycle</span> <span class="emphasis">gathers</span>
+					<span class="term"> requirement</span>s available at the product
+					runtime by means of an <span class="emphasis">requirement
+						gathering</span> interface.
 				</p>
 				<p>
 					Implementations for this interface can be multiple and are provided
@@ -150,34 +151,35 @@
 	<div class="separable documentation info-section container">
 		<div class="row">
 			<div class="step-name col-sm">
-				<div class="section-header">Grants mining: which licenses the
+				<div class="section-header">Grants mining: what licenses the
 					user has</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="step-impl col-sm-3">
 				<p>
-					<span class="term">Grant</span> - particle of a license that states
-					<span class="sample">this feature can be used if this <span
-						class="term">condition</span> is fulfilled
+					<span class="term">Grant</span> - particle of a license that
+					states: <span class="sample">this feature can be used if
+						this <span class="term">condition</span> is fulfilled
 					</span>.
 				</p>
 				<p>
-					<span class="term">Condition</span> - formalized demand for runtime
-					environment or user data, like <span class="sample">hwdisk.serial='123456YU'</span>
-					or <span class="sample">location='greece'</span> or <span
+					<span class="term">Condition</span> - <span class="term">grant</span>'s
+					restriction, formalized demand for runtime environment or user
+					data, like <span class="sample">hwdisk.serial='123456YU'</span> or
+					<span class="sample">location='Greece'</span> or <span
 						class="sample">root.name='SecurityTools'</span>.
 			</div>
 			<div class="step-impl col-sm-2">
 				<p>
-					<span class="term">Grants</span> are supplied by a product license.
+					<span class="term">Grant</span>s are supplied by a product license.
 				</p>
 			</div>
 			<div class="step-impl col-sm-7">
 				<p>
-					<span class="term">Access Cycle</span> <span class="term">mines
-						grants</span> with the dedicated <span class="emphasis">mining</span>
-					interface.
+					<span class="term">Access Cycle</span> <span class="emphasis">mines</span>
+					<span class="term">grant</span>s with the dedicated <span
+						class="emphasis">mining</span> interface.
 				</p>
 				<p>
 					There can be many miners registered at the product runtime; <span
@@ -198,7 +200,7 @@
 		<div class="row">
 			<div class="step-name col-sm">
 				<div class="section-header">Permission emitting: which grants
-					gets their conditions fulfilled</div>
+					get their conditions fulfilled</div>
 			</div>
 		</div>
 		<div class="row">
@@ -215,10 +217,11 @@
 			<div class="step-impl col-sm-3">
 				<p>
 					<span class="term">Permission</span>s are supplied by Access Cycle:
-					it evaluates all the <span class="term">grant's condition</span>s
+					it <span class="emphasis">evaluates</span> all the <span
+						class="term">grant</span>s' <span class="term">condition</span>s
 					against appropriate runtime environment (for instance <span
 						class="sample">hardware</span> or <span class="sample">user
-						data</span>) to define whether it is fulfilled or not. Each <span
+						data</span>) to detect whether it is fulfilled or not. Each <span
 						class="term">grant</span> with successfully evaluated <span
 						class="term">condition</span> begets a <span class="term">permission</span>
 					for the <span class="term">feature</span> to be used.
@@ -226,10 +229,11 @@
 			</div>
 			<div class="step-impl col-sm-6">
 				<p>
-					<span class="term">Access Cycle</span> <span class="term">evaluates
-						condition</span> with the set of interfaces responsible for condition
-					text parsing to tokens, token evaluation against runtime
-					environment, combination of results for all tokens, etc.
+					<span class="term">Access Cycle</span> <span class="emphasis">evaluates</span>
+					a <span class="term">condition</span> with the set of interfaces
+					responsible for condition text parsing to tokens, token evaluation
+					against runtime environment, combination of results for all tokens,
+					etc.
 				</p>
 				<p>
 					Lots of <span class="term">condition type</span>s can be supported
@@ -267,16 +271,16 @@
 					interface.
 				</p>
 				<p>
-					There can be many of them; and if you like to append more
-					restrictive logic to the whole cycle, implement the interface and
-					supply it through <span class="term">Access Cycle
-						Configuration</span>.
+					Many implementations can be supplied at the same time; and if you
+					like to append more restrictive logic to the whole cycle, implement
+					the interface and supply it through <span class="term">Access
+						Cycle Configuration</span>.
 				</p>
 				<p>
 					According to the examination the final decision is made: where the
 					<span class="term">feature</span> can be used or not. <span
-						class="term">examination certificate</span> is leased to convey
-					all the details of the solution. 
+						class="term">Examination certificate</span> is leased to convey
+					all the details of the solution.
 				</p>
 				<p>
 					For successfully examined feature a <span class="term">usage
