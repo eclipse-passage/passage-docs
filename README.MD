@@ -10,7 +10,7 @@ Copyright © 2021-2025 ArSysOp
 [![Eclipse License](https://img.shields.io/badge/License-EPL--2.0-thistle.svg)](https://github.com/eclipse-passage/passage-docs/blob/master/LICENSE) 
 
 ### About
-Documentation for [Eclipse Passage](https://projects.eclipse.org/projects/technology.passage) project [components](https://download.eclipse.org/passage/updates/release/2.0.0/) and [products](https://download.eclipse.org/passage/downloads/release/2.0.0/).
+Documentation for [Eclipse Passage](https://projects.eclipse.org/projects/technology.passage) project.
 
 ### How to use
 
