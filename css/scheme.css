@@ -1,0 +1,9 @@
+.artifact {
+	fill: transparent;
+	stroke: green;
+	stroke-width: 2px;
+}
+
+.action {
+	cursor: pointer;
+}
